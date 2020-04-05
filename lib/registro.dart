@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mascotas/colores.dart';
+import 'package:Mascotas/colores.dart';
 
 class Registro extends StatefulWidget {
   @override
@@ -25,12 +25,20 @@ class _RegistroState extends State<Registro> {
         children: <Widget>[
           Row(
             children: <Widget>[
-              Expanded(child: Container(
-                alignment: Alignment.center,
-                child: Image.asset("imagenes/aa.png"),
+              Expanded(
+                child: Container(
+                alignment: Alignment.topRight,
+                child: Image.asset("imagenes/gg.png"),
                 height: 100,
                 margin: EdgeInsets.only(top: (heightApp * .1)),
-              ))
+              )),
+                Expanded(
+                  child: Container(
+                  alignment: Alignment.topLeft,
+                  child: Image.asset("imagenes/pp.png"),
+                  height: 100,
+                  margin: EdgeInsets.only(top: (heightApp * .1)),
+                ))
             ],
           ),
            Column(
@@ -63,7 +71,7 @@ class _RegistroState extends State<Registro> {
                          Container(
                             margin: EdgeInsets.only(top: (heightApp * 0.02)),
                             child: RaisedButton(
-                              color: Color.fromRGBO(198, 145, 184, 1),
+                              color: Color.fromRGBO(99, 182, 233, .9),
                               onPressed: () {},
                               child: const Text('Crear cuenta',
                                   style: TextStyle(

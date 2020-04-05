@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mascotas/colores.dart';
-import 'package:mascotas/registro.dart';
+import 'package:Mascotas/colores.dart';
+import 'package:Mascotas/registro.dart';
+import 'package:Mascotas/inicio.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -25,8 +26,15 @@ class _LoginState extends State<Login> {
               children: <Widget>[
                 Expanded(
                     child: Container(
-                  alignment: Alignment.center,
-                  child: Image.asset("imagenes/aa.png"),
+                  alignment: Alignment.topRight,
+                  child: Image.asset("imagenes/gg.png"),
+                  height: 100,
+                  margin: EdgeInsets.only(top: (heightApp * .1)),
+                )),
+                Expanded(
+                    child: Container(
+                  alignment: Alignment.topLeft,
+                  child: Image.asset("imagenes/pp.png"),
                   height: 100,
                   margin: EdgeInsets.only(top: (heightApp * .1)),
                 ))
@@ -39,7 +47,7 @@ class _LoginState extends State<Login> {
                         child: Text(
                           "Iniciar Sesión",
                           style: TextStyle(
-                              color: Color.fromRGBO(198, 145, 184, 1),
+                              color: Color.fromRGBO(99, 182, 233, .9),
                               fontSize: 30),
                         ),
                         alignment: Alignment.center,
@@ -55,27 +63,38 @@ class _LoginState extends State<Login> {
                     child: Column(
                       children: <Widget>[
                         TextFormField(
-                          decoration: InputDecoration(labelText: 'Email', prefixIcon: Icon(Icons.email)),
+                          decoration: InputDecoration(
+                              labelText: 'Email',
+                              prefixIcon: Icon(Icons.email)),
                         ),
                         TextFormField(
-                          decoration: InputDecoration(labelText: 'Contraseña', prefixIcon: Icon(Icons.lock)),
+                          decoration: InputDecoration(
+                              labelText: 'Contraseña',
+                              prefixIcon: Icon(Icons.lock)),
                         ),
                         Container(
-                            margin: EdgeInsets.only(top: (heightApp * 0.05)),
-                            child: RaisedButton(
-                              color: Color.fromRGBO(198, 145, 184, 1),
-                              onPressed: () {},
-                              child: const Text('Iniciar Sesión',
-                                  style: TextStyle(
-                                      fontSize: 20, color: Colors.white)),
-                            )),
+                          margin: EdgeInsets.only(top: (heightApp * 0.05)),
+                          child: RaisedButton(
+                            color: Color.fromRGBO(99, 182, 233, .9),
+                            child: Text('Iniciar Sesión',
+                                style: TextStyle(
+                                    fontSize: 20, color: Colors.white)),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Inicio()),
+                              );
+                            },
+                          ),
+                        ),
                         Container(
                             margin: EdgeInsets.only(top: (heightApp * 0.05)),
                             child: Text(
                               "Si no tienes una cuenta puedes crearla aqui:",
                               style: TextStyle(
                                   fontSize: 12,
-                                  color: Color.fromRGBO(198, 145, 184, 1)),
+                                  color: Color.fromRGBO(99, 182, 233, .9)),
                             )),
                         Container(
                             margin: EdgeInsets.only(top: (heightApp * 0.01)),
@@ -90,7 +109,7 @@ class _LoginState extends State<Login> {
                               child: const Text('Registrarse',
                                   style: TextStyle(
                                       fontSize: 20,
-                                      color: Color.fromRGBO(198, 145, 184, 1))),
+                                      color: Color.fromRGBO(99, 182, 233, .9))),
                             ))
                       ],
                     ),

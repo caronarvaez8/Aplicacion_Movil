@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mascotas/login.dart';
-import 'package:mascotas/colores.dart';
+import 'package:Mascotas/login.dart';
+import 'package:Mascotas/colores.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
