@@ -100,8 +100,8 @@ class _InicioState extends State<Inicio> {
                             },
                           ),
                         ),
-                         Container(
-                           margin: EdgeInsets.only(top: (heightApp * 0.02)),
+                        Container(
+                          margin: EdgeInsets.only(top: (heightApp * 0.02)),
                           child: RaisedButton(
                             color: Color.fromRGBO(99, 182, 233, .9),
                             child: Text("ver mascotas",
