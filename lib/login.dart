@@ -45,10 +45,11 @@ class _LoginState extends State<Login> {
                 Expanded(
                     child: Container(
                         child: Text(
-                          "Iniciar Sesión",
+                          "Mascotas",
                           style: TextStyle(
                               color: Color.fromRGBO(99, 182, 233, .9),
-                              fontSize: 30),
+                              fontSize: 30,
+                              fontWeight: FontWeight.w800,),
                         ),
                         alignment: Alignment.center,
                         margin: EdgeInsets.only(top: (heightApp * 0.05))))
@@ -91,7 +92,7 @@ class _LoginState extends State<Login> {
                         Container(
                             margin: EdgeInsets.only(top: (heightApp * 0.05)),
                             child: Text(
-                              "Si no tienes una cuenta puedes crearla aqui:",
+                              "Si no tienes una cuenta puedes crearla aquí:",
                               style: TextStyle(
                                   fontSize: 12,
                                   color: Color.fromRGBO(99, 182, 233, .9)),

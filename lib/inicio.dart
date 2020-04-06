@@ -1,6 +1,8 @@
+import 'package:Mascotas/animales.dart';
 import 'package:flutter/material.dart';
 import 'package:Mascotas/colores.dart';
 import 'package:Mascotas/expli.dart';
+import 'package:Mascotas/animales.dart';
 
 class Inicio extends StatefulWidget {
   @override
@@ -15,7 +17,7 @@ class _InicioState extends State<Inicio> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Adopción de Mascotas",
+          "Inicio",
           style: TextStyle(color: Colors.white),
         ),
       ),
@@ -111,7 +113,7 @@ class _InicioState extends State<Inicio> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Expli()),
+                                    builder: (context) => Animales()),
                               );
                             },
                           ),
