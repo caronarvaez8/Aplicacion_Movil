@@ -27,18 +27,11 @@ class _InicioState extends State<Inicio> {
             children: <Widget>[
               Expanded(
                   child: Container(
-                alignment: Alignment.topRight,
-                child: Image.asset("imagenes/gg.png"),
-                height: 100,
-                margin: EdgeInsets.only(top: (heightApp * .1)),
+                alignment: Alignment.center,
+                child: Image.asset("imagenes/inicio.jpg"),
+                height: 180,
+                margin: EdgeInsets.only(top: (heightApp * .05)),
               )),
-              Expanded(
-                  child: Container(
-                alignment: Alignment.topLeft,
-                child: Image.asset("imagenes/pp.png"),
-                height: 100,
-                margin: EdgeInsets.only(top: (heightApp * .1)),
-              ))
             ],
           ),
           Row(
@@ -70,8 +63,8 @@ class _InicioState extends State<Inicio> {
                     alignment: Alignment.center,
                     margin: EdgeInsets.only(top: (heightApp * 0.03)),
                     child: Text(
-                      "Encuentra el próximo integrante de la\n" +
-                          "fammilia  entre  diferentes  mascotas\n" +
+                      "Encuentra  el próximo integrante de la\n" +
+                          "fammilia  entre   diferentes  mascotas\n" +
                           "disposibles para adoptar en tu ciudad ",
                       style: TextStyle(
                           fontSize: 17, color: Color.fromRGBO(22, 112, 170, 5)),

@@ -14,7 +14,7 @@ class _ExpliState extends State<Expli> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Adopción de Mascotas",
+          "¿Por qué adoptar?",
           style: TextStyle(color: Colors.white),
         ),
       ),
@@ -24,18 +24,12 @@ class _ExpliState extends State<Expli> {
             children: <Widget>[
               Expanded(
                   child: Container(
-                alignment: Alignment.topRight,
-                child: Image.asset("imagenes/gg.png"),
-                height: 100,
-                margin: EdgeInsets.only(top: (heightApp * .1)),
+                width: widthApp * 0.9,
+                alignment: Alignment.center,
+                child: Image.asset("imagenes/porque.jpg"),
+                height: 180,
+                margin: EdgeInsets.only(top: (heightApp * .05)),
               )),
-              Expanded(
-                  child: Container(
-                alignment: Alignment.topLeft,
-                child: Image.asset("imagenes/pp.png"),
-                height: 100,
-                margin: EdgeInsets.only(top: (heightApp * .1)),
-              ))
             ],
           ),
           Row(
@@ -43,21 +37,21 @@ class _ExpliState extends State<Expli> {
               Expanded(
                   child: Center(
                 child: Container(
-                    width: widthApp * 0.8,
                     child: Column(
-                      children: <Widget>[
-                        Container(
-                            alignment: Alignment.center,
-                            margin: EdgeInsets.only(top: (heightApp * 0.05)),
-                            child: Text(
-                              "¿Por qué estas salvando una vida?",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 35,
-                                  color: Color.fromRGBO(22, 114, 170, .9)),
-                            ))
-                      ],
-                    )),
+                  children: <Widget>[
+                    Container(
+                        width: widthApp * 0.85,
+                        alignment: Alignment.center,
+                        margin: EdgeInsets.only(top: (heightApp * 0.05)),
+                        child: Text(
+                          "   ¿Por  qué  estas    salvando una vida?",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w800,
+                              fontSize: 35,
+                              color: Color.fromRGBO(22, 114, 170, .9)),
+                        ))
+                  ],
+                )),
               ))
             ],
           ),
@@ -66,19 +60,22 @@ class _ExpliState extends State<Expli> {
               Expanded(
                   child: Center(
                 child: Container(
-                  width: widthApp * 0.8,
+                  width: widthApp * 0.85,
                   child: Column(
                     children: <Widget>[
                       Container(
                         alignment: Alignment.center,
-                        margin: EdgeInsets.only(top: (heightApp * 0.05)),
+                        margin: EdgeInsets.only(top: (heightApp * 0.03)),
                         child: Text(
-                            "Cada año,  millones de  animales  nacen en  las  calles o" +
-                                "terminan  siendo  abandonados. Los  refugios  de animales" +
-                                "y las organizaciones de cuidado no  satisfacen la demanda." +
-                                "Si más personas adoptaran en lugar de comprar, ese número" +
-                                "disminuiría considerablemente. Un  animal  adoptado en un " +
-                                "refugio deja el espacio para que otro sea rescatado.",
+                            "Cada  año, millones  de  animales  nacen\n" +
+                                "en las calles o terminan  siendo  abando-\n" +
+                                "nados.  Los refugios  de  animales  y  las\n" +
+                                "organizaciones de cuidado no satisfacen\n" +
+                                "la demanda. Si más  personas adoptaran\n" +
+                                "en lugar de  comprar, ese número rebajar\n" +
+                                "considerablemente.  Unanimal adoptado\n" +
+                                "en  un refugio  deja  el espacio  para  que\n" +
+                                "otro sea rescatado.\n",
                             style: TextStyle(
                                 fontSize: 17,
                                 color: Color.fromRGBO(22, 114, 170, 5))),

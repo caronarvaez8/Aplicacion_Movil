@@ -9,8 +9,16 @@ class Animales extends StatefulWidget {
 
 class _AnimalesState extends State<Animales> {
   List<Map<String, String>> map1 = [
-    {'Nombre': 'Dubli'},
-    {'Nombre': 'Muñeco'}
+    {'Nombre': 'Dubli',
+    'Edad': '2 Años',
+    'Raza': 'Criollo'},
+    {'Nombre': 'Muñeco',
+    'Edad': '1 Años',
+    'Raza': 'Pug'},
+    {'Nombre': 'Milan',
+    'Edad': '6 Meses',
+    'Raza': 'chihuahua'}
+
   ];
   @override
   Widget build(BuildContext context) {
@@ -30,7 +38,7 @@ class _AnimalesState extends State<Animales> {
         ),
         itemCount: map1.length,
         itemBuilder: (context, index) => Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(2.0),
             child: Column(
              
               children: <Widget>[
@@ -41,7 +49,7 @@ class _AnimalesState extends State<Animales> {
                       alignment: Alignment.center,
                       child: Image.asset("imagenes/pp.png"),
                       height: 100,
-                      margin: EdgeInsets.only(top: (heightApp * .05)),
+                      margin: EdgeInsets.only(top: (heightApp * .02)),
                     ))
                   ],
                 ),
@@ -55,12 +63,14 @@ class _AnimalesState extends State<Animales> {
                         children: <Widget>[
                           Container(
                               alignment: Alignment.center,
-                              margin: EdgeInsets.only(top: (heightApp * 0.05)),
+                              margin: EdgeInsets.only(top: (heightApp * 0.03)),
                               child: Text(
-                                "Nombre: ${map1[index]['Nombre']}",
+                                "Nombre: ${map1[index]['Nombre']}\n"+
+                                "Edad: ${map1[index]['Edad']}\n"+
+                                "Raza: ${map1[index]['Raza']}",
                                 style: TextStyle(
                                     fontWeight: FontWeight.w800,
-                                    fontSize: 20,
+                                    fontSize: 15,
                                     color: Color.fromRGBO(22, 114, 170, .9)),
                               ))
                         ],
@@ -74,7 +84,7 @@ class _AnimalesState extends State<Animales> {
                         child: Center(
                             child: Container(
                       
-                      margin: EdgeInsets.only(top: (heightApp * 0.05)),
+                      margin: EdgeInsets.only(top: (heightApp * 0.02)),
                       child: RaisedButton(
                         color: Color.fromRGBO(99, 182, 233, .9),
                         child: Text('ver mas',

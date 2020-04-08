@@ -14,7 +14,7 @@ class _RegistroState extends State<Registro> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Adopción de Mascotas",
+          "Registro",
           style: TextStyle(color: Colors.white),
         ),
       ),
