@@ -13,4 +13,4 @@ Map<int, Color> color = {
   900: Color.fromRGBO(99, 182, 233, 1),
 };
 
-MaterialColor colorCustom = MaterialColor(0xFF63B6E9, color);
+MaterialColor colorCustom = MaterialColor(0xFF318D2F, color);

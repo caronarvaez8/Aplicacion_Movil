@@ -17,7 +17,8 @@ class _LoginState extends State<Login> {
         appBar: AppBar(
           title: Text(
             "Adopción de Mascotas",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(fontWeight: FontWeight.w800, color: Colors.white
+            ),
           ),
         ),
         body: Column(
@@ -28,14 +29,14 @@ class _LoginState extends State<Login> {
                     child: Container(
                   alignment: Alignment.topRight,
                   child: Image.asset("imagenes/gg.png"),
-                  height: 100,
+                  height: 130,
                   margin: EdgeInsets.only(top: (heightApp * .1)),
                 )),
                 Expanded(
                     child: Container(
                   alignment: Alignment.topLeft,
                   child: Image.asset("imagenes/pp.png"),
-                  height: 100,
+                  height: 130,
                   margin: EdgeInsets.only(top: (heightApp * .1)),
                 ))
               ],
@@ -47,9 +48,10 @@ class _LoginState extends State<Login> {
                         child: Text(
                           "Mascotas",
                           style: TextStyle(
-                              color: Color.fromRGBO(99, 182, 233, .9),
-                              fontSize: 30,
-                              fontWeight: FontWeight.w800,),
+                            color: Color.fromRGBO(184, 77, 231, .5),
+                            fontSize: 30,
+                            fontWeight: FontWeight.w800,
+                          ),
                         ),
                         alignment: Alignment.center,
                         margin: EdgeInsets.only(top: (heightApp * 0.05))))
@@ -74,12 +76,9 @@ class _LoginState extends State<Login> {
                               prefixIcon: Icon(Icons.lock)),
                         ),
                         Container(
+                          height: 50.0,
                           margin: EdgeInsets.only(top: (heightApp * 0.05)),
                           child: RaisedButton(
-                            color: Color.fromRGBO(99, 182, 233, .9),
-                            child: Text('Iniciar Sesión',
-                                style: TextStyle(
-                                    fontSize: 20, color: Colors.white)),
                             onPressed: () {
                               Navigator.push(
                                 context,
@@ -87,7 +86,41 @@ class _LoginState extends State<Login> {
                                     builder: (context) => Inicio()),
                               );
                             },
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(80.0)),
+                            padding: EdgeInsets.all(0.0),
+                            child: Ink(
+                              decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Color.fromRGBO(255, 81, 0, .5),
+                                      Color.fromRGBO(128,0,128, .9),
+                                    ],
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.centerRight,
+                                  ),
+                                  borderRadius: BorderRadius.circular(30.0)),
+                              child: Container(
+                                constraints: BoxConstraints(
+                                    maxWidth: 200.0, minHeight: 50.0),
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Iniciar sesión",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: 20, color: Colors.white),
+                                ),
+                              ),
+                            ),
                           ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: (heightApp * 0.03)),
+                          alignment: Alignment.center,
+                          child: const Text('Olvidé mi contraseña',
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  color: Color.fromRGBO(48, 48, 48, .9))),
                         ),
                         Container(
                             margin: EdgeInsets.only(top: (heightApp * 0.05)),
@@ -95,7 +128,7 @@ class _LoginState extends State<Login> {
                               "Si no tienes una cuenta puedes crearla aquí:",
                               style: TextStyle(
                                   fontSize: 12,
-                                  color: Color.fromRGBO(99, 182, 233, .9)),
+                                  color: Color.fromRGBO(48, 48, 48, .7)),
                             )),
                         Container(
                             margin: EdgeInsets.only(top: (heightApp * 0.01)),
