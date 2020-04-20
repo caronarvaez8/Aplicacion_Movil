@@ -1,6 +1,6 @@
 import 'package:Mascotas/animales.dart';
 import 'package:flutter/material.dart';
-import 'package:Mascotas/colores.dart';
+import 'package:Mascotas/home.dart';
 import 'package:Mascotas/expli.dart';
 import 'package:Mascotas/animales.dart';
 
@@ -18,7 +18,10 @@ class _InicioState extends State<Inicio> {
       appBar: AppBar(
         title: Text(
           "Inicio",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Color.fromRGBO(174, 79, 18, .9),
+          fontFamily: "flower",
+          fontSize: 30,
+          fontWeight: FontWeight.w800),
         ),
       ),
       body: Column(

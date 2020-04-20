@@ -12,80 +12,211 @@ class _RegistroState extends State<Registro> {
     double widthApp = MediaQuery.of(context).size.width;
     double heightApp = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Registro",
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
-
-
-
-      body:Column(
+      body: Column(
         children: <Widget>[
           Row(
             children: <Widget>[
               Expanded(
-                child: Container(
-                alignment: Alignment.topRight,
-                child: Image.asset("imagenes/gg.png"),
-                height: 100,
-                margin: EdgeInsets.only(top: (heightApp * .1)),
-              )),
-                Expanded(
-                  child: Container(
-                  alignment: Alignment.topLeft,
-                  child: Image.asset("imagenes/pp.png"),
-                  height: 100,
-                  margin: EdgeInsets.only(top: (heightApp * .1)),
-                ))
-            ],
-          ),
-           Column(
-        children: <Widget>[
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: Center(
-                  child: Container(
-                    width: widthApp * 0.8,
-                    margin: EdgeInsets.only(top:heightApp*0.05),
-                    child: Column(
-                      children: <Widget>[
-                        TextFormField(
-                
-                          decoration: InputDecoration(labelText: 'Nombre',prefixIcon: Icon(Icons.person)),
-                        ),
-                        TextFormField(
-                          decoration: InputDecoration(labelText: 'Apellido',prefixIcon: Icon(Icons.person)),
-                        ),
-                        TextFormField(
-                          decoration: InputDecoration(labelText: 'Email', prefixIcon: Icon(Icons.email)),
-                        ),
-                        TextFormField(
-                          decoration: InputDecoration(labelText: 'Celular',prefixIcon: Icon(Icons.phone_android)),
-                        ),
-                        TextFormField(
-                          decoration: InputDecoration(labelText: 'Contraseña', prefixIcon: Icon(Icons.lock)),
-                        ),
-                         Container(
-                            margin: EdgeInsets.only(top: (heightApp * 0.02)),
-                            child: RaisedButton(
-                              color: Color.fromRGBO(99, 182, 233, .9),
-                              onPressed: () {},
-                              child: const Text('Crear cuenta',
-                                  style: TextStyle(
-                                      fontSize: 20, color: Colors.white)),
-                            )),
+                child: AnimatedContainer(
+                  duration: Duration(seconds: 5),
+                  width: widthApp * 100,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Color.fromRGBO(245, 215, 112, .7),
+                        Color.fromRGBO(252, 195, 0, .9),
                       ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.topRight,
                     ),
+                    
+                  ),
+                  child: Column(
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Container(
+                            alignment: Alignment.topLeft,
+                            child: Image.asset("imagenes/perro.png"),
+                            height: 300,
+                          ),
+                          Container(
+                              child: Text(
+                                "AdopDOG",
+                                style: TextStyle(
+                                  fontFamily: "flower",
+                                  color: Color.fromRGBO(174, 79, 18, .9),
+                                  fontSize: 35,
+                                  fontWeight: FontWeight.w800,
+                                ),
+                              ),
+                              alignment: Alignment.topRight,
+                              margin: EdgeInsets.only(top: (heightApp * 0.03)))
+                        ],
+                      ),
+                    ],
                   ),
                 ),
+              ),
+            ],
+          ),
+          Column(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Center(
+                      child: Container(
+                        width: widthApp * 0.8,
+                        margin: EdgeInsets.only(top: heightApp * 0.03),
+                        child: Column(
+                          children: <Widget>[
+                            TextFormField(
+                              decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: const BorderRadius.all(
+                                      const Radius.circular(10.0),
+                                    ),
+                                  ),
+                                  labelText: 'Nombre',
+                                  prefixIcon: Icon(Icons.person)),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: (heightApp * 0.015)),
+                              child: Column(
+                                children: <Widget>[
+                                  TextFormField(
+                                    decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                          borderRadius: const BorderRadius.all(
+                                            const Radius.circular(10.0),
+                                          ),
+                                        ),
+                                        labelText: 'Apellido',
+                                        prefixIcon: Icon(Icons.person)),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: (heightApp * 0.015)),
+                              child: Column(
+                                children: <Widget>[
+                                  TextFormField(
+                                    decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                          borderRadius: const BorderRadius.all(
+                                            const Radius.circular(10.0),
+                                          ),
+                                        ),
+                                        labelText: 'Email',
+                                        prefixIcon: Icon(Icons.email)),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: (heightApp * 0.015)),
+                              child: Column(
+                                children: <Widget>[
+                                  TextFormField(
+                                    decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                          borderRadius: const BorderRadius.all(
+                                            const Radius.circular(10.0),
+                                          ),
+                                        ),
+                                        labelText: 'Celular',
+                                        prefixIcon: Icon(Icons.phone_android)),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: (heightApp * 0.015)),
+                              child: Column(
+                                children: <Widget>[
+                                  TextFormField(
+                                    decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                          borderRadius: const BorderRadius.all(
+                                            const Radius.circular(10.0),
+                                          ),
+                                        ),
+                                        labelText: 'Contraseña',
+                                        prefixIcon: Icon(Icons.lock)),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: (heightApp * 0.015)),
+                              child: Column(
+                                children: <Widget>[
+                                  TextFormField(
+                                    decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                          borderRadius: const BorderRadius.all(
+                                            const Radius.circular(10.0),
+                                          ),
+                                        ),
+                                        labelText: 'Confirmar Contraseña',
+                                        prefixIcon: Icon(Icons.lock)),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              Row(
+                children: <Widget>[
+                  Expanded(
+                      child: Center(
+                    child: Container(
+                      height: 50.0,
+                      margin: EdgeInsets.only(top: (heightApp * 0.03)),
+                      child: RaisedButton(
+                        onPressed: () {},
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(80.0)),
+                        padding: EdgeInsets.all(0.0),
+                        child: Ink(
+                          decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  Color.fromRGBO(252, 195, 0, .6),
+                                  Color.fromRGBO(252, 195, 0, .9),
+                                ],
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                              ),
+                              borderRadius: BorderRadius.circular(30.0)),
+                          child: Container(
+                            constraints: BoxConstraints(
+                                maxWidth: 250.0, minHeight: 50.0),
+                            alignment: Alignment.center,
+                            child: Text(
+                              "Crear cuenta",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  //fontFamily: "flower",
+                                  fontSize: 20,
+                                  color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ))
+                ],
               )
             ],
-          )
-        ],
-      ),
+          ),
         ],
       ),
     );

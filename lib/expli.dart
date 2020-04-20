@@ -15,7 +15,11 @@ class _ExpliState extends State<Expli> {
       appBar: AppBar(
         title: Text(
           "¿Por qué adoptar?",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Color.fromRGBO(174, 79, 18, .9),
+          fontFamily: "flower",
+          fontSize: 30,
+          fontWeight: FontWeight.w800
+          ),
         ),
       ),
       body: Column(
@@ -86,25 +90,6 @@ class _ExpliState extends State<Expli> {
               ))
             ],
           ),
-          Row(
-            children: <Widget>[
-              Expanded(
-                  child: Center(
-                child: Container(
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.only(top: (heightApp * 0.05)),
-                  child: RaisedButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    color: Color.fromRGBO(99, 182, 233, .9),
-                    child: Text('Atras',
-                        style: TextStyle(fontSize: 20, color: Colors.white)),
-                  ),
-                ),
-              ))
-            ],
-          )
         ],
       ),
     );

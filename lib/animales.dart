@@ -29,7 +29,11 @@ class _AnimalesState extends State<Animales> {
       appBar: AppBar(
         title: Text(
           "Adopción de Mascotas",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Color.fromRGBO(174, 79, 18, .9),
+          fontFamily: "flower",
+          fontSize: 30,
+          fontWeight: FontWeight.w800
+          ),
         ),
       ),
       body: ListView.separated(

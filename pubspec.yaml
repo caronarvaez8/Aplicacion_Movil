@@ -55,8 +55,9 @@ flutter:
    - imagenes/pp.png
    - imagenes/inicio.jpg
    - imagenes/porque.jpg
-   - imagenes/criollo.jpg
-   - imagenes/pug.jpg
+   - imagenes/p.jpg
+   - imagenes/ar.jpg
+   - imagenes/perro.png
    - imagenes/chi.jpg
   #  - images/a_dot_ham.jpeg
 
@@ -85,3 +86,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: flower
+      fonts:
+        - asset: font/Flower.ttf

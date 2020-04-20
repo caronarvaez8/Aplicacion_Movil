@@ -11,6 +11,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         
+       // scaffoldBackgroundColor: const Color(0xFFF5D770),
+        //brightness: Brightness.dark,
         primarySwatch: colorCustom,
       ),
       home:Login(),
