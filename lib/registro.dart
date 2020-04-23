@@ -23,8 +23,8 @@ class _RegistroState extends State<Registro> {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        Color.fromRGBO(245, 215, 112, .7),
-                        Color.fromRGBO(252, 195, 0, .9),
+                       Color.fromRGBO(252, 195, 0, .6),
+                      Color.fromRGBO(252, 195, 0, .9)
                       ],
                       begin: Alignment.topLeft,
                       end: Alignment.topRight,

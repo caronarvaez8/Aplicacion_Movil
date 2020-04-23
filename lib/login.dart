@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:Mascotas/colores.dart';
+
 import 'package:Mascotas/registro.dart';
-import 'package:Mascotas/home.dart';
+import 'package:Mascotas/BottomNavBar.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -116,7 +116,7 @@ class _LoginState extends State<Login> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Home()),
+                      MaterialPageRoute(builder: (context) => BottomNavBar()),
                     );
                   },
                   shape: RoundedRectangleBorder(

@@ -1,8 +1,6 @@
-import 'package:Mascotas/animales.dart';
+
 import 'package:flutter/material.dart';
-import 'package:Mascotas/home.dart';
-import 'package:Mascotas/expli.dart';
-import 'package:Mascotas/animales.dart';
+
 
 class Inicio extends StatefulWidget {
   @override
@@ -75,50 +73,6 @@ class _InicioState extends State<Inicio> {
               )
             ],
           ),
-          Row(
-            children: <Widget>[
-              Expanded(
-                  child: Center(
-                child: Container(
-                    margin: EdgeInsets.only(top: (heightApp * 0.05)),
-                    child: Column(
-                      children: <Widget>[
-                        Container(
-                          child: RaisedButton(
-                            color: Color.fromRGBO(99, 182, 233, .9),
-                            child: Text("¿Por qué adoptar?",
-                                style: TextStyle(
-                                    fontSize: 20, color: Colors.white)),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Expli()),
-                              );
-                            },
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(top: (heightApp * 0.02)),
-                          child: RaisedButton(
-                            color: Color.fromRGBO(99, 182, 233, .9),
-                            child: Text("ver mascotas",
-                                style: TextStyle(
-                                    fontSize: 20, color: Colors.white)),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Animales()),
-                              );
-                            },
-                          ),
-                        ),
-                      ],
-                    )),
-              ))
-            ],
-          )
         ],
       ),
     );

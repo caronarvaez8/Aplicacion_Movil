@@ -12,6 +12,7 @@ class _ExpliState extends State<Expli> {
     double widthApp = MediaQuery.of(context).size.width;
     double heightApp = MediaQuery.of(context).size.height;
     return Scaffold(
+      
       appBar: AppBar(
         title: Text(
           "¿Por qué adoptar?",
@@ -21,7 +22,9 @@ class _ExpliState extends State<Expli> {
           fontWeight: FontWeight.w800
           ),
         ),
+        
       ),
+     
       body: Column(
         children: <Widget>[
           Row(
