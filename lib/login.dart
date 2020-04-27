@@ -25,8 +25,8 @@ class _LoginState extends State<Login> {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      Color.fromRGBO(252, 195, 0, .6),
-                      Color.fromRGBO(252, 195, 0, .9),
+                      Color.fromRGBO(132, 13, 153, .6),
+                      Color.fromRGBO(132, 13, 153, .9),
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.topRight,
@@ -46,7 +46,7 @@ class _LoginState extends State<Login> {
                             "AdopDOG",
                             style: TextStyle(
                               fontFamily: "flower",
-                              color: Color.fromRGBO(174, 79, 18, .9),
+                              color: Color.fromRGBO(0, 0, 0, .9),
                               fontSize: 35,
                               fontWeight: FontWeight.w800,
                             ),
@@ -126,8 +126,8 @@ class _LoginState extends State<Login> {
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            Color.fromRGBO(245, 215, 112, .7),
-                            Color.fromRGBO(252, 195, 0, .9),
+                            Color.fromRGBO(132, 13, 153, .6),
+                            Color.fromRGBO(132, 13, 153, .9),
                           ],
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
@@ -186,7 +186,7 @@ class _LoginState extends State<Login> {
                         child: const Text('Registrarse',
                             style: TextStyle(
                                 fontSize: 20,
-                                color: Color.fromRGBO(174, 79, 18, .9))),
+                                color: Color.fromRGBO(132, 13, 153, .9))),
                       ))
                 ],
               ),

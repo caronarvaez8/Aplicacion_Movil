@@ -16,7 +16,7 @@ class _InicioState extends State<Inicio> {
       appBar: AppBar(
         title: Text(
           "Inicio",
-          style: TextStyle(color: Color.fromRGBO(174, 79, 18, .9),
+          style: TextStyle(color: Color.fromRGBO(255, 255, 255, .9),
           fontFamily: "flower",
           fontSize: 30,
           fontWeight: FontWeight.w800),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:Mascotas/Login.dart';
 import 'package:Mascotas/colores.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {

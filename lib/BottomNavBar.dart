@@ -48,7 +48,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           ],
           color: Colors.white,
           buttonBackgroundColor: Colors.white,
-          backgroundColor: Color(0xFFFAC921),
+          backgroundColor: Color(0xFF840D99),
           animationCurve: Curves.easeInOut,
           animationDuration: Duration(milliseconds: 600),
           onTap: (int tappedIndex) {
@@ -58,7 +58,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           },
         ),
         body: Container(
-          color: Color(0xFFFAC921),
+          color: Color(0xFF840D99),
           child: Center(
             
             child: _showPage,
