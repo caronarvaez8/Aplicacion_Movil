@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class Inicio extends StatefulWidget {
@@ -8,6 +8,7 @@ class Inicio extends StatefulWidget {
 }
 
 class _InicioState extends State<Inicio> {
+  SharedPreferences sharedPreferences;
   @override
   Widget build(BuildContext context) {
     double widthApp = MediaQuery.of(context).size.width;
@@ -78,3 +79,4 @@ class _InicioState extends State<Inicio> {
     );
   }
 }
+

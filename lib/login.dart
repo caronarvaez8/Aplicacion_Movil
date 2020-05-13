@@ -1,7 +1,12 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:Mascotas/registro.dart';
 import 'package:Mascotas/BottomNavBar.dart';
+import 'package:http/http.dart' as http;
+import 'package:toast/toast.dart';
+
+String username;
 
 class Login extends StatefulWidget {
   @override
@@ -9,6 +14,33 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  TextEditingController controllerUser = new TextEditingController();
+  TextEditingController controllerPass = new TextEditingController();
+
+  String mensaje = "";
+
+  Future<List> Login() async {
+    final reponde = await http.post("", body: {
+      "username": controllerUser.text,
+      "password": controllerPass.text
+    });
+
+    var dataUser = json.decode(reponde.body);
+    if (dataUser == "Correcto") {
+      Toast.show("LOGIN CORRECTO", context,
+          duration: Toast.LENGTH_LONG,
+          gravity: Toast.CENTER,
+          backgroundColor: Colors.blue,
+          textColor: Colors.white);
+    } else if (dataUser == "Incorrecto") {
+      Toast.show("LOGIN incorrecto", context,
+          duration: Toast.LENGTH_LONG,
+          gravity: Toast.CENTER,
+          backgroundColor: Colors.blue,
+          textColor: Colors.white);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double widthApp = MediaQuery.of(context).size.width;
@@ -72,6 +104,7 @@ class _LoginState extends State<Login> {
                 child: Column(
                   children: <Widget>[
                     TextFormField(
+                      controller: controllerUser,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: const BorderRadius.all(
@@ -87,6 +120,7 @@ class _LoginState extends State<Login> {
                       child: Column(
                         children: <Widget>[
                           TextFormField(
+                            controller: controllerPass,
                             decoration: InputDecoration(
                                 border: OutlineInputBorder(
                                   borderRadius: const BorderRadius.all(
