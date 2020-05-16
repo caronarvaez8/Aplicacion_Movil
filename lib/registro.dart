@@ -7,7 +7,12 @@ class Registro extends StatefulWidget {
 }
 
 class _RegistroState extends State<Registro> {
+  
   @override
+  void initState() {
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
     double widthApp = MediaQuery.of(context).size.width;
     double heightApp = MediaQuery.of(context).size.height;
