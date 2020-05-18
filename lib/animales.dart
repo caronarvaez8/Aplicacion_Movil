@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:Mascotas/colores.dart';
 import 'package:Mascotas/todo.dart';
 
 class Animales extends StatefulWidget {
@@ -8,105 +7,99 @@ class Animales extends StatefulWidget {
 }
 
 class _AnimalesState extends State<Animales> {
-  List<Map<String, String>> map1 = [
-    {'Nombre': 'Dubli',
-    'Edad': '2 Años',
-    'Raza': 'Criollo'},
-    {'Nombre': 'Muñeco',
-    'Edad': '1 Años',
-    'Raza': 'Pug'},
-    {'Nombre': 'Milan',
-    'Edad': '6 Meses',
-    'Raza': 'chihuahua'}
 
-  ];
   @override
   Widget build(BuildContext context) {
     double widthApp = MediaQuery.of(context).size.width;
     double heightApp = MediaQuery.of(context).size.height;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Adopción de Mascotas",
-          style: TextStyle(color: Color.fromRGBO(255, 255, 255, .9),
-          fontFamily: "flower",
-          fontSize: 30,
-          fontWeight: FontWeight.w800
+          "Adopcion de Perros",
+          style: TextStyle(
+              color: Color.fromRGBO(255, 255, 255, .9),
+              fontFamily: "flower",
+              fontSize: 30,
+              fontWeight: FontWeight.w800),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Expanded(
+                  child: Container(
+                alignment: Alignment.center,
+                child: Image.asset("imagenes/criollo.jpg"),
+                height: 200,
+                margin: EdgeInsets.only(top: (heightApp * .05)),
+              )),
+            ],
           ),
-        ),
-      ),
-      body: ListView.separated(
-        separatorBuilder: (context, index) => Divider(
-          color: Colors.black,
-        ),
-        itemCount: map1.length,
-        itemBuilder: (context, index) => Padding(
-            padding: EdgeInsets.all(2.0),
-            child: Column(
-             
-              children: <Widget>[
-                Row(
+          Row(
+            children: <Widget>[
+              Expanded(
+                  child: Container(
+                    
+                child: Column(
                   children: <Widget>[
-                    Expanded(
-                        child: Container(
+                    Container(
+                      width: widthApp*0.88,
+                        margin: EdgeInsets.only(top: (heightApp * 0.06)),
+                        child: Text(
+                          "Elige tu mejor compañia, para que te diviertas jugando",
+                          style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.black),
+                        )),
+                    Container(
+                        height: 50.0,
+                margin: EdgeInsets.only(top: (heightApp * 0.07)),
+                child: RaisedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Todo()),
+                    );
+                  },
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(80.0)),
+                  padding: EdgeInsets.all(0.0),
+                  child: Ink(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            Color.fromRGBO(132, 13, 153, .6),
+                            Color.fromRGBO(132, 13, 153, .9),
+                          ],
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                        ),
+                        borderRadius: BorderRadius.circular(30.0)),
+                    child: Container(
+                      constraints:
+                          BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
                       alignment: Alignment.center,
-                      child: Image.asset("imagenes/pp.png"),
-                      height: 100,
-                      margin: EdgeInsets.only(top: (heightApp * .02)),
-                    ))
-                  ],
-                ),
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                        child: Center(
-                      child: Container(
+                      child: Text(
+                        "Comenzar",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 30, color: Colors.white,
+                        fontWeight: FontWeight.w800,
                         
-                          child: Column(
-                        children: <Widget>[
-                          Container(
-                              alignment: Alignment.center,
-                              margin: EdgeInsets.only(top: (heightApp * 0.03)),
-                              child: Text(
-                                "Nombre: ${map1[index]['Nombre']}\n"+
-                                "Edad: ${map1[index]['Edad']}\n"+
-                                "Raza: ${map1[index]['Raza']}",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w800,
-                                    fontSize: 15,
-                                    color: Color.fromRGBO(22, 114, 170, .9)),
-                              ))
-                        ],
-                      )),
-                    ))
+                        fontFamily: "flower"),
+                      ),
+                    ),
+                  ),
+                ),)
                   ],
                 ),
-                Row(
-                  children: <Widget>[
-                    Expanded(
-                        child: Center(
-                            child: Container(
-                      
-                      margin: EdgeInsets.only(top: (heightApp * 0.02)),
-                      child: RaisedButton(
-                        color: Color.fromRGBO(99, 182, 233, .9),
-                        child: Text('ver mas',
-                            style:
-                                TextStyle(fontSize: 20, color: Colors.white)),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Todo()),
-                          );
-                        },
-                      ),
-                    ),))
-                  ],
-                )
-              ],
-            )),
+              ))
+            ],
+          ),
+        ],
       ),
+      )
     );
   }
 }

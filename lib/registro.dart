@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
-import 'package:Mascotas/colores.dart';
+import 'package:Mascotas/login.dart';
+import 'package:http/http.dart' as http;
+import 'package:toast/toast.dart';
 
 class Registro extends StatefulWidget {
   @override
@@ -8,6 +12,46 @@ class Registro extends StatefulWidget {
 
 class _RegistroState extends State<Registro> {
   
+TextEditingController controllerNom = new TextEditingController();
+  TextEditingController controllerApe = new TextEditingController();
+  TextEditingController controllerCel = new TextEditingController();
+  TextEditingController controllerEmail = new TextEditingController();
+  TextEditingController controllerPass = new TextEditingController();
+  TextEditingController controllerPassConf = new TextEditingController();
+
+  Future<List> crearCuenta() async {
+    final reponde =
+        await http.post("http://localhost/register.php", body: {
+      "nombre": controllerNom.text,
+      "apellido": controllerApe.text,
+      "telefono": controllerCel.text,
+      "correo": controllerEmail.text,
+      "contra": controllerPass.text,
+      "contraV": controllerPassConf.text
+    });
+
+    var dataUser = json.decode(reponde.body);
+
+    if (dataUser["status"]) {
+      Toast.show("Creaste la cuenta", context,
+          duration: Toast.LENGTH_LONG,
+          gravity: Toast.CENTER,
+          backgroundColor: Color.fromRGBO(132, 13, 153, .9),
+          textColor: Color.fromRGBO(225, 225, 225, .9));
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Login()),
+      );
+    } else if (!dataUser["status"]) {
+      Toast.show("${dataUser['problem']}", context,
+          duration: Toast.LENGTH_LONG,
+          gravity: Toast.CENTER,
+          backgroundColor: Color.fromRGBO(132, 13, 153, .9),
+          textColor: Color.fromRGBO(225, 225, 225, .9));
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -17,7 +61,8 @@ class _RegistroState extends State<Registro> {
     double widthApp = MediaQuery.of(context).size.width;
     double heightApp = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Column(
+      body: SingleChildScrollView(
+       child: Column(
         children: <Widget>[
           Row(
             children: <Widget>[
@@ -49,7 +94,7 @@ class _RegistroState extends State<Registro> {
                                 "AdopDOG",
                                 style: TextStyle(
                                   fontFamily: "flower",
-                                  color: Color.fromRGBO(0, 0, 0, .9),
+                                  color: Color.fromRGBO(225, 225, 225, .9),
                                   fontSize: 35,
                                   fontWeight: FontWeight.w800,
                                 ),
@@ -76,6 +121,7 @@ class _RegistroState extends State<Registro> {
                         child: Column(
                           children: <Widget>[
                             TextFormField(
+                              controller: controllerNom,
                               decoration: InputDecoration(
                                   border: OutlineInputBorder(
                                     borderRadius: const BorderRadius.all(
@@ -90,6 +136,7 @@ class _RegistroState extends State<Registro> {
                               child: Column(
                                 children: <Widget>[
                                   TextFormField(
+                                    controller: controllerApe,
                                     decoration: InputDecoration(
                                         border: OutlineInputBorder(
                                           borderRadius: const BorderRadius.all(
@@ -107,6 +154,7 @@ class _RegistroState extends State<Registro> {
                               child: Column(
                                 children: <Widget>[
                                   TextFormField(
+                                    controller: controllerEmail,
                                     decoration: InputDecoration(
                                         border: OutlineInputBorder(
                                           borderRadius: const BorderRadius.all(
@@ -124,6 +172,7 @@ class _RegistroState extends State<Registro> {
                               child: Column(
                                 children: <Widget>[
                                   TextFormField(
+                                    controller: controllerCel,
                                     decoration: InputDecoration(
                                         border: OutlineInputBorder(
                                           borderRadius: const BorderRadius.all(
@@ -141,6 +190,8 @@ class _RegistroState extends State<Registro> {
                               child: Column(
                                 children: <Widget>[
                                   TextFormField(
+                                    controller: controllerPass,
+                                    obscureText: true,
                                     decoration: InputDecoration(
                                         border: OutlineInputBorder(
                                           borderRadius: const BorderRadius.all(
@@ -158,6 +209,8 @@ class _RegistroState extends State<Registro> {
                               child: Column(
                                 children: <Widget>[
                                   TextFormField(
+                                    controller: controllerPassConf,
+                                    obscureText:true,
                                     decoration: InputDecoration(
                                         border: OutlineInputBorder(
                                           borderRadius: const BorderRadius.all(
@@ -185,7 +238,9 @@ class _RegistroState extends State<Registro> {
                       height: 50.0,
                       margin: EdgeInsets.only(top: (heightApp * 0.03)),
                       child: RaisedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          crearCuenta();
+                        },
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(80.0)),
                         padding: EdgeInsets.all(0.0),
@@ -208,8 +263,9 @@ class _RegistroState extends State<Registro> {
                               "Crear cuenta",
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  //fontFamily: "flower",
+                              fontFamily: "flower",
                                   fontSize: 20,
+                                  fontWeight: FontWeight.w800,
                                   color: Colors.white),
                             ),
                           ),
@@ -223,6 +279,7 @@ class _RegistroState extends State<Registro> {
           ),
         ],
       ),
+      )
     );
   }
 }

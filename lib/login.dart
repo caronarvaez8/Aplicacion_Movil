@@ -17,10 +17,8 @@ class _LoginState extends State<Login> {
   TextEditingController controllerUser = new TextEditingController();
   TextEditingController controllerPass = new TextEditingController();
 
-  String mensaje = "";
-
   Future<List> Login() async {
-    final reponde = await http.post("", body: {
+    final reponde = await http.post("http://localhost/login.php", body: {
       "username": controllerUser.text,
       "password": controllerPass.text
     });
@@ -32,6 +30,7 @@ class _LoginState extends State<Login> {
           gravity: Toast.CENTER,
           backgroundColor: Colors.blue,
           textColor: Colors.white);
+
     } else if (dataUser == "Incorrecto") {
       Toast.show("LOGIN incorrecto", context,
           duration: Toast.LENGTH_LONG,
@@ -46,7 +45,8 @@ class _LoginState extends State<Login> {
     double widthApp = MediaQuery.of(context).size.width;
     double heightApp = MediaQuery.of(context).size.height;
     return Scaffold(
-        body: Column(
+        body: SingleChildScrollView(
+          child: Column(
       children: <Widget>[
         Row(
           children: <Widget>[
@@ -78,13 +78,12 @@ class _LoginState extends State<Login> {
                             "AdopDOG",
                             style: TextStyle(
                               fontFamily: "flower",
-                              color: Color.fromRGBO(0, 0, 0, .9),
+                              color: Color.fromRGBO(255, 255, 255, .9),
                               fontSize: 35,
-                              fontWeight: FontWeight.w800,
+                              fontWeight: FontWeight.w900,
                             ),
                           ),
                           alignment: Alignment.topRight,
-                          //margin: EdgeInsets.only(top: (heightApp * 0.05))
                         )
                       ],
                     ),
@@ -121,6 +120,7 @@ class _LoginState extends State<Login> {
                         children: <Widget>[
                           TextFormField(
                             controller: controllerPass,
+                            obscureText: true,
                             decoration: InputDecoration(
                                 border: OutlineInputBorder(
                                   borderRadius: const BorderRadius.all(
@@ -175,7 +175,8 @@ class _LoginState extends State<Login> {
                         "Iniciar sesión",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            //  fontFamily: "flower",
+                        fontFamily: "flower",
+                        fontWeight: FontWeight.w900,
                             fontSize: 20,
                             color: Colors.white),
                       ),
@@ -192,14 +193,6 @@ class _LoginState extends State<Login> {
                 child: Container(
               child: Column(
                 children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.only(top: (heightApp * 0.035)),
-                    alignment: Alignment.center,
-                    child: const Text('Olvidé mi contraseña',
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: Color.fromRGBO(48, 48, 48, .9))),
-                  ),
                   Container(
                       margin: EdgeInsets.only(top: (heightApp * 0.07)),
                       child: Text(
@@ -220,6 +213,8 @@ class _LoginState extends State<Login> {
                         child: const Text('Registrarse',
                             style: TextStyle(
                                 fontSize: 20,
+                                fontFamily: "flower",
+                                fontWeight: FontWeight.w900,
                                 color: Color.fromRGBO(132, 13, 153, .9))),
                       ))
                 ],
@@ -228,6 +223,7 @@ class _LoginState extends State<Login> {
           ],
         ),
       ],
-    ));
+    )
+        ));
   }
 }
