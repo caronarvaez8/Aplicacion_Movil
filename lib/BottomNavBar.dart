@@ -3,6 +3,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:Mascotas/expli.dart';
 import 'package:Mascotas/inicio.dart';
 import 'package:Mascotas/animales.dart';
+
 void main() => runApp(MaterialApp(home: BottomNavBar()));
 
 class BottomNavBar extends StatefulWidget {
@@ -38,8 +39,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: CurvedNavigationBar(
-
-         // initialIndex : 0,
+          // initialIndex : 0,
           items: <Widget>[
             Icon(Icons.home, size: 30, color: Color(0xFFF2CA4E)),
             Icon(Icons.pets, size: 30, color: Color(0xFFF2CA4E)),
@@ -58,9 +58,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           },
         ),
         body: Container(
-          color: Color(0xFFA775E7),
           child: Center(
-            
             child: _showPage,
           ),
         ));

@@ -11,8 +11,7 @@ class Registro extends StatefulWidget {
 }
 
 class _RegistroState extends State<Registro> {
-  
-TextEditingController controllerNom = new TextEditingController();
+  TextEditingController controllerNom = new TextEditingController();
   TextEditingController controllerApe = new TextEditingController();
   TextEditingController controllerCel = new TextEditingController();
   TextEditingController controllerEmail = new TextEditingController();
@@ -20,8 +19,8 @@ TextEditingController controllerNom = new TextEditingController();
   TextEditingController controllerPassConf = new TextEditingController();
 
   Future<List> crearCuenta() async {
-    final reponde =
-        await http.post("http://3.16.167.111/Aplicacion_Movil/register.php", body: {
+    final reponde = await http
+        .post("http://3.16.167.111/Aplicacion_Movil/register.php", body: {
       "nombreP": controllerNom.text,
       "apellidoP": controllerApe.text,
       "telefonoP": controllerCel.text,
@@ -36,8 +35,8 @@ TextEditingController controllerNom = new TextEditingController();
       Toast.show("Creaste la cuenta", context,
           duration: Toast.LENGTH_LONG,
           gravity: Toast.CENTER,
-          backgroundColor: Color.fromRGBO(132, 13, 153, .9),
-          textColor: Color.fromRGBO(225, 225, 225, .9));
+          backgroundColor: Color.fromRGBO(131, 78, 198, .9),
+          textColor: Colors.white);
 
       Navigator.push(
         context,
@@ -47,8 +46,8 @@ TextEditingController controllerNom = new TextEditingController();
       Toast.show("${dataUser['problem']}", context,
           duration: Toast.LENGTH_LONG,
           gravity: Toast.CENTER,
-          backgroundColor: Color.fromRGBO(132, 13, 153, .9),
-          textColor: Color.fromRGBO(225, 225, 225, .9));
+          backgroundColor: Color.fromRGBO(131, 78, 198, .9),
+          textColor: Colors.white);
     }
   }
 
@@ -61,8 +60,8 @@ TextEditingController controllerNom = new TextEditingController();
     double widthApp = MediaQuery.of(context).size.width;
     double heightApp = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: SingleChildScrollView(
-       child: Column(
+        body: SingleChildScrollView(
+      child: Column(
         children: <Widget>[
           Row(
             children: <Widget>[
@@ -210,7 +209,7 @@ TextEditingController controllerNom = new TextEditingController();
                                 children: <Widget>[
                                   TextFormField(
                                     controller: controllerPassConf,
-                                    obscureText:true,
+                                    obscureText: true,
                                     decoration: InputDecoration(
                                         border: OutlineInputBorder(
                                           borderRadius: const BorderRadius.all(
@@ -248,8 +247,8 @@ TextEditingController controllerNom = new TextEditingController();
                           decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
-                                  Color.fromRGBO(132, 13, 153, .6),
-                                  Color.fromRGBO(132, 13, 153, .9),
+                                  Color.fromRGBO(131, 78, 198, .6),
+                                  Color.fromRGBO(131, 78, 198, .9),
                                 ],
                                 begin: Alignment.centerLeft,
                                 end: Alignment.centerRight,
@@ -263,7 +262,7 @@ TextEditingController controllerNom = new TextEditingController();
                               "Crear cuenta",
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                              fontFamily: "flower",
+                                  fontFamily: "flower",
                                   fontSize: 20,
                                   fontWeight: FontWeight.w800,
                                   color: Colors.white),
@@ -279,7 +278,6 @@ TextEditingController controllerNom = new TextEditingController();
           ),
         ],
       ),
-      )
-    );
+    ));
   }
 }

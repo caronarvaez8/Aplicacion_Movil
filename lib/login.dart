@@ -17,11 +17,9 @@ class _LoginState extends State<Login> {
   TextEditingController controllerPass = new TextEditingController();
 
   Future<List> loginU() async {
-    final reponde = await http
-        .post("http://3.16.167.111/Aplicacion_Movil/login.php", body: {
-      "correo": controllerUser.text,
-      "contra": controllerPass.text
-    });
+    final reponde = await http.post(
+        "http://3.16.167.111/Aplicacion_Movil/login.php",
+        body: {"correo": controllerUser.text, "contra": controllerPass.text});
 
     var dataUser = json.decode(reponde.body);
     if (dataUser["status"]) {
@@ -40,7 +38,7 @@ class _LoginState extends State<Login> {
       Toast.show("Login incorrecto", context,
           duration: Toast.LENGTH_LONG,
           gravity: Toast.CENTER,
-          backgroundColor: Colors.blue,
+          backgroundColor: Color.fromRGBO(131, 78, 198, .9),
           textColor: Colors.white);
     }
   }
@@ -163,7 +161,7 @@ class _LoginState extends State<Login> {
                         gradient: LinearGradient(
                           colors: [
                             Color.fromRGBO(131, 78, 198, .6),
-                      Color.fromRGBO(131, 78, 198, .9),
+                            Color.fromRGBO(131, 78, 198, .9),
                           ],
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
@@ -171,7 +169,7 @@ class _LoginState extends State<Login> {
                         borderRadius: BorderRadius.circular(30.0)),
                     child: Container(
                       constraints:
-                          BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
+                          BoxConstraints(maxWidth: 225.0, minHeight: 50.0),
                       alignment: Alignment.center,
                       child: Text(
                         "Iniciar sesión",
@@ -179,7 +177,7 @@ class _LoginState extends State<Login> {
                         style: TextStyle(
                             fontFamily: "flower",
                             fontWeight: FontWeight.w900,
-                            fontSize: 20,
+                            fontSize: 25,
                             color: Colors.white),
                       ),
                     ),

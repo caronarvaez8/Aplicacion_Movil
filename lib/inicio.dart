@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
-
 class Inicio extends StatefulWidget {
   @override
   _InicioState createState() => _InicioState();
@@ -19,15 +17,15 @@ class _InicioState extends State<Inicio> {
         //backgroundColor: Colors.white,
         title: Text(
           "Inicio",
-          
-          style: TextStyle(color: Colors.white,
-          fontFamily: "flower",
-          fontSize: 35,
-          fontWeight: FontWeight.w900),
+          style: TextStyle(
+              color: Colors.white,
+              fontFamily: "flower",
+              fontSize: 35,
+              fontWeight: FontWeight.w900),
         ),
       ),
       body: SingleChildScrollView(
-         child: Column(
+          child: Column(
         children: <Widget>[
           Row(
             children: <Widget>[
@@ -44,11 +42,10 @@ class _InicioState extends State<Inicio> {
             children: <Widget>[
               Expanded(
                   child: Container(
-                    
                 child: Column(
                   children: <Widget>[
                     Container(
-                      width: widthApp*0.5,
+                        width: widthApp * 0.5,
                         margin: EdgeInsets.only(top: (heightApp * 0.06)),
                         child: Text(
                           "Adopta no compra",
@@ -59,25 +56,22 @@ class _InicioState extends State<Inicio> {
                               color: Color(0xFF840D99)),
                         )),
                     Container(
-                      alignment: Alignment.center,
-                  width: widthApp*0.8,
-                    
-                    margin: EdgeInsets.only(top: (heightApp * 0.03)),
-                    child: Text(
-                      "Encuentra el próximo integrante de la familia entre diferentes mascotas disposibles para adoptar en tu ciudad",
-                      style: TextStyle(
-                          fontSize: 20, color: Colors.black),
-                    )
-                        )
+                        alignment: Alignment.center,
+                        width: widthApp * 0.8,
+                        margin: EdgeInsets.only(top: (heightApp * 0.03)),
+                        child: Text(
+                          "Encuentra el próximo integrante de la familia entre diferentes mascotas disposibles para adoptar en tu ciudad",
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Color.fromRGBO(48, 48, 48, .8)),
+                        ))
                   ],
                 ),
               ))
             ],
           ),
         ],
-      )
-      ),
+      )),
     );
   }
 }
-
