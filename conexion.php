@@ -12,7 +12,7 @@
 
     public static function conexion(){
       try {
-        $conexion = new PDO('mysql:host=http://3.16.167.111/; dbname=proyecto', "root", "");
+        $conexion = new PDO('mysql:host=3.16.167.111; dbname=Aplicacion', "root", "1144097625Carolina*");
         $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $conexion->exec("SET CHARACTER SET UTF8");
       } catch (exception $e) {

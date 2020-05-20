@@ -1,17 +1,17 @@
 <?php
   require_once("./conexion.php");
   
-  $arr = array('status' => NULL, 'usuario' => NULL);
+  $arr = array('status' => NULL, 'usuarioP' => NULL);
   
-  $correo = strtolower($_POST['correo']);
-  $contra = $_POST['contra'];
+  $correo = strtolower($_POST['correoP']);
+  $contra = $_POST['contraP'];
 
-  $consulta = conectarModelo::conexion()->query("SELECT * FROM usuarios");
+  $consulta = conectarModelo::conexion()->query("SELECT * FROM usuariosP");
 
   while ($usuario = $consulta->fetch(PDO::FETCH_ASSOC))
-    if(strtolower($usuario['usu_cor']) == $correo && $usuario['usu_pas'] == $contra){
+    if(strtolower($usuario['usu_corP']) == $correo && $usuario['usu_pasP'] == $contra){
       $arr['status'] = true;
-      $arr['usuario'] = $usuario;
+      $arr['usuarioP'] = $usuario;
       echo json_encode($arr);
       return;
     }
