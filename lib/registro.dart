@@ -72,8 +72,8 @@ class _RegistroState extends State<Registro> {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        Color.fromRGBO(132, 13, 153, .6),
-                        Color.fromRGBO(132, 13, 153, .9),
+                        Color.fromRGBO(131, 78, 198, .6),
+                        Color.fromRGBO(131, 78, 198, .9),
                       ],
                       begin: Alignment.topLeft,
                       end: Alignment.topRight,
