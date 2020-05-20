@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
+
 class Inicio extends StatefulWidget {
   @override
   _InicioState createState() => _InicioState();
@@ -15,14 +16,14 @@ class _InicioState extends State<Inicio> {
     double heightApp = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        //backgroundColor: Colors.white,
         title: Text(
           "Inicio",
           
-          style: TextStyle(color: Color.fromRGBO(1, 255, 255, .9),
+          style: TextStyle(color: Colors.white,
           fontFamily: "flower",
-          fontSize: 30,
-          fontWeight: FontWeight.w800),
+          fontSize: 35,
+          fontWeight: FontWeight.w900),
         ),
       ),
       body: SingleChildScrollView(
@@ -35,7 +36,7 @@ class _InicioState extends State<Inicio> {
                 alignment: Alignment.center,
                 child: Image.asset("imagenes/chi.jpg"),
                 height: 180,
-                margin: EdgeInsets.only(top: (heightApp * .13)),
+                margin: EdgeInsets.only(top: (heightApp * 0.05)),
               )),
             ],
           ),

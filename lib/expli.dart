@@ -16,7 +16,7 @@ class _ExpliState extends State<Expli> {
       appBar: AppBar(
         title: Text(
           "¿Por qué adoptar?",
-          style: TextStyle(color: Color.fromRGBO(255, 255, 255, .9),
+          style: TextStyle(color: Colors.white,
           fontFamily: "flower",
           fontSize: 30,
           fontWeight: FontWeight.w800

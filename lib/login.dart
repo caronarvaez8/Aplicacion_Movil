@@ -1,11 +1,11 @@
 import 'dart:convert';
 
+import 'package:Mascotas/inicio.dart';
 import 'package:flutter/material.dart';
 import 'package:Mascotas/registro.dart';
 import 'package:Mascotas/BottomNavBar.dart';
 import 'package:http/http.dart' as http;
 import 'package:toast/toast.dart';
-
 
 class Login extends StatefulWidget {
   @override
@@ -17,24 +17,26 @@ class _LoginState extends State<Login> {
   TextEditingController controllerPass = new TextEditingController();
 
   Future<List> loginU() async {
-    final reponde = await http.post("http://3.16.167.111/Aplicacion_Movil/login.php", body: {
-      "usuarioP": controllerUser.text,
-      "correoP": controllerPass.text
+    final reponde = await http
+        .post("http://3.16.167.111/Aplicacion_Movil/login.php", body: {
+      "correo": controllerUser.text,
+      "contra": controllerPass.text
     });
 
     var dataUser = json.decode(reponde.body);
-    if (dataUser) {
+    if (dataUser["status"]) {
+      /*
       Toast.show("LOGIN CORRECTO", context,
           duration: Toast.LENGTH_LONG,
           gravity: Toast.CENTER,
           backgroundColor: Colors.blue,
           textColor: Colors.white);
-          Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => BottomNavBar()),
-                    );
-
-    } else if (dataUser) {
+          */
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => BottomNavBar()),
+      );
+    } else if (!dataUser["status"]) {
       Toast.show("Login incorrecto", context,
           duration: Toast.LENGTH_LONG,
           gravity: Toast.CENTER,
@@ -49,7 +51,7 @@ class _LoginState extends State<Login> {
     double heightApp = MediaQuery.of(context).size.height;
     return Scaffold(
         body: SingleChildScrollView(
-          child: Column(
+            child: Column(
       children: <Widget>[
         Row(
           children: <Widget>[
@@ -60,8 +62,8 @@ class _LoginState extends State<Login> {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      Color.fromRGBO(132, 13, 153, .6),
-                      Color.fromRGBO(132, 13, 153, .9),
+                      Color.fromRGBO(131, 78, 198, .6),
+                      Color.fromRGBO(131, 78, 198, .9),
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.topRight,
@@ -101,7 +103,7 @@ class _LoginState extends State<Login> {
             Expanded(
                 child: Center(
               child: Container(
-                margin: EdgeInsets.only(top: (heightApp * 0.05)),
+                margin: EdgeInsets.only(top: (heightApp * 0.06)),
                 width: widthApp * 0.75,
                 child: Column(
                   children: <Widget>[
@@ -148,7 +150,7 @@ class _LoginState extends State<Login> {
                 child: Center(
               child: Container(
                 height: 50.0,
-                margin: EdgeInsets.only(top: (heightApp * 0.03)),
+                margin: EdgeInsets.only(top: (heightApp * 0.05)),
                 child: RaisedButton(
                   onPressed: () {
                     loginU();
@@ -160,8 +162,8 @@ class _LoginState extends State<Login> {
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            Color.fromRGBO(132, 13, 153, .6),
-                            Color.fromRGBO(132, 13, 153, .9),
+                            Color.fromRGBO(131, 78, 198, .6),
+                      Color.fromRGBO(131, 78, 198, .9),
                           ],
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
@@ -175,8 +177,8 @@ class _LoginState extends State<Login> {
                         "Iniciar sesión",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                        fontFamily: "flower",
-                        fontWeight: FontWeight.w900,
+                            fontFamily: "flower",
+                            fontWeight: FontWeight.w900,
                             fontSize: 20,
                             color: Colors.white),
                       ),
@@ -215,7 +217,7 @@ class _LoginState extends State<Login> {
                                 fontSize: 20,
                                 fontFamily: "flower",
                                 fontWeight: FontWeight.w900,
-                                color: Color.fromRGBO(132, 13, 153, .9))),
+                                color: Color(0xFFF5BA42))),
                       ))
                 ],
               ),
@@ -223,7 +225,6 @@ class _LoginState extends State<Login> {
           ],
         ),
       ],
-    )
-        ));
+    )));
   }
 }
