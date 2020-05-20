@@ -15,9 +15,11 @@ class _InicioState extends State<Inicio> {
     double heightApp = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: Text(
           "Inicio",
-          style: TextStyle(color: Color.fromRGBO(255, 255, 255, .9),
+          
+          style: TextStyle(color: Color.fromRGBO(1, 255, 255, .9),
           fontFamily: "flower",
           fontSize: 30,
           fontWeight: FontWeight.w800),
@@ -33,7 +35,7 @@ class _InicioState extends State<Inicio> {
                 alignment: Alignment.center,
                 child: Image.asset("imagenes/chi.jpg"),
                 height: 180,
-                margin: EdgeInsets.only(top: (heightApp * .05)),
+                margin: EdgeInsets.only(top: (heightApp * .13)),
               )),
             ],
           ),

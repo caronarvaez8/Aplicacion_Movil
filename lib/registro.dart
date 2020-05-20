@@ -21,13 +21,13 @@ TextEditingController controllerNom = new TextEditingController();
 
   Future<List> crearCuenta() async {
     final reponde =
-        await http.post("http://localhost/register.php", body: {
-      "nombre": controllerNom.text,
-      "apellido": controllerApe.text,
-      "telefono": controllerCel.text,
-      "correo": controllerEmail.text,
-      "contra": controllerPass.text,
-      "contraV": controllerPassConf.text
+        await http.post("http://3.16.167.111/Aplicacion_Movil/register.php", body: {
+      "nombreP": controllerNom.text,
+      "apellidoP": controllerApe.text,
+      "telefonoP": controllerCel.text,
+      "correoP": controllerEmail.text,
+      "contraP": controllerPass.text,
+      "contraVP": controllerPassConf.text
     });
 
     var dataUser = json.decode(reponde.body);

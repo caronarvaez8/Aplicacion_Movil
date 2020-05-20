@@ -41,14 +41,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
          // initialIndex : 0,
           items: <Widget>[
-            Icon(Icons.home, size: 30),
-            Icon(Icons.pets, size: 30),
-            Icon(Icons.search, size: 30),
-            Icon(Icons.perm_identity, size: 30),
+            Icon(Icons.home, size: 30,color: Colors.white),
+            Icon(Icons.pets, size: 30, color: Colors.white ),
+            Icon(Icons.search, size: 30, color: Colors.white),
+            Icon(Icons.perm_identity, size: 30, color: Colors.white),
           ],
-          color: Colors.white,
-          buttonBackgroundColor: Colors.white,
-          backgroundColor: Color(0xFF840D99),
+          color: Color(0xFF840D99),
+          buttonBackgroundColor: Color(0xFF840D99),
+          backgroundColor: Colors.white,
           animationCurve: Curves.easeInOut,
           animationDuration: Duration(milliseconds: 600),
           onTap: (int tappedIndex) {

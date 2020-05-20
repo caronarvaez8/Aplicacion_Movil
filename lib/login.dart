@@ -6,7 +6,6 @@ import 'package:Mascotas/BottomNavBar.dart';
 import 'package:http/http.dart' as http;
 import 'package:toast/toast.dart';
 
-String username;
 
 class Login extends StatefulWidget {
   @override
@@ -17,22 +16,26 @@ class _LoginState extends State<Login> {
   TextEditingController controllerUser = new TextEditingController();
   TextEditingController controllerPass = new TextEditingController();
 
-  Future<List> Login() async {
-    final reponde = await http.post("http://localhost/login.php", body: {
-      "username": controllerUser.text,
-      "password": controllerPass.text
+  Future<List> loginU() async {
+    final reponde = await http.post("http://3.16.167.111/Aplicacion_Movil/login.php", body: {
+      "usuarioP": controllerUser.text,
+      "correoP": controllerPass.text
     });
 
     var dataUser = json.decode(reponde.body);
-    if (dataUser == "Correcto") {
+    if (dataUser) {
       Toast.show("LOGIN CORRECTO", context,
           duration: Toast.LENGTH_LONG,
           gravity: Toast.CENTER,
           backgroundColor: Colors.blue,
           textColor: Colors.white);
+          Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => BottomNavBar()),
+                    );
 
-    } else if (dataUser == "Incorrecto") {
-      Toast.show("LOGIN incorrecto", context,
+    } else if (dataUser) {
+      Toast.show("Login incorrecto", context,
           duration: Toast.LENGTH_LONG,
           gravity: Toast.CENTER,
           backgroundColor: Colors.blue,
@@ -148,10 +151,7 @@ class _LoginState extends State<Login> {
                 margin: EdgeInsets.only(top: (heightApp * 0.03)),
                 child: RaisedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => BottomNavBar()),
-                    );
+                    loginU();
                   },
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(80.0)),
