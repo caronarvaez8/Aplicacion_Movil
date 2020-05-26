@@ -3,7 +3,7 @@
   
   $arr = array();
 
-  $consulta = conectarModelo::conexion()->query('SELECT car_modP FROM perroP');
+  $consulta = conectarModelo::conexion()->query('SELECT car_modP FROM perrosP');
 
   while ($carro = $consulta->fetch(PDO::FETCH_ASSOC))
     array_push($arr, $carro['car_modP']);
