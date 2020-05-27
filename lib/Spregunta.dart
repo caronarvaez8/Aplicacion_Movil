@@ -1,24 +1,24 @@
 import 'dart:convert';
 
-import 'package:Mascotas/colores.dart';
+import 'package:Mascotas/todo.dart';
 import 'package:flutter/material.dart';
 import 'package:toast/toast.dart';
 import 'package:http/http.dart' as http;
-import 'package:Mascotas/Spregunta.dart';
+import 'package:Mascotas/todo.dart';
 
-class Ppregunta extends StatefulWidget {
+class Spregunta extends StatefulWidget {
   @override
-  _PpreguntaoState createState() => _PpreguntaoState();
+  _SpreguntaoState createState() => _SpreguntaoState();
 }
 
-class _PpreguntaoState extends State<Ppregunta> {
+class _SpreguntaoState extends State<Spregunta> {
   @override
-  String use = "Selecione la raza";
+  String use = "Selecione el tamaño";
 
   /// MARCAS
   Future<List> marcas() async {
     final reponde =
-        await http.post("http://3.16.167.111/Aplicacion_Movil/marcas.php");
+        await http.post("http://3.16.167.111/Aplicacion_Movil/tipos.php");
 
     var dataMar = json.decode(reponde.body);
 
@@ -33,7 +33,7 @@ class _PpreguntaoState extends State<Ppregunta> {
     }
   }
 
-  List<String> marcas1 = ["Selecione la raza"];
+  List<String> marcas1 = ["Selecione el tamaño"];
   @override
   void initState() {
     super.initState();
@@ -52,7 +52,7 @@ class _PpreguntaoState extends State<Ppregunta> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "Raza",
+            "Tamaño",
             style: TextStyle(
                 color: Color.fromRGBO(255, 255, 255, .9),
                 fontFamily: "flower",
@@ -68,7 +68,7 @@ class _PpreguntaoState extends State<Ppregunta> {
                   Expanded(
                       child: Container(
                     alignment: Alignment.center,
-                    child: Image.asset("imagenes/chi.jpg"),
+                    child: Image.asset("imagenes/criollo.jpg"),
                     height: 180,
                     margin: EdgeInsets.only(top: (heightApp * .05)),
                   )),
@@ -82,11 +82,11 @@ class _PpreguntaoState extends State<Ppregunta> {
                     child: Column(
                       children: <Widget>[
                         Container(
-                          margin: EdgeInsets.only(top: (heightApp * 0.06)),
+                          margin: EdgeInsets.only(top: (heightApp * 0.1)),
                           alignment: Alignment.center,
-                          child: const Text('¿Qué raza de carro desea?',
+                          child: const Text('¿De que tamaño desea el perro?',
                               style: TextStyle(
-                                  fontSize: 27,
+                                  fontSize: 25,
                                   fontFamily: "flower",
                                   fontWeight: FontWeight.w900,
                                   color: Color(0xFF5C7E1F))),
@@ -107,12 +107,12 @@ class _PpreguntaoState extends State<Ppregunta> {
                           margin: EdgeInsets.only(top: (heightApp * 0.06)),
                           child: DropdownButton<String>(
                             isExpanded: true,
+                            value: use,
                             iconEnabledColor: Color(0xFF776016),
                             style: new TextStyle(
                                 color: Color(0xFF776016),
                                 fontSize: 20,
                                 fontFamily: "cormorant"),
-                            value: use,
                             items: marcas1.map((String e) {
                               return DropdownMenuItem<String>(
                                 child: Text(e),
@@ -136,12 +136,12 @@ class _PpreguntaoState extends State<Ppregunta> {
                   Expanded(
                       child: Container(
                     height: 50.0,
-                    margin: EdgeInsets.only(top: (heightApp * 0.3)),
+                    margin: EdgeInsets.only(top: (heightApp * 0.25)),
                     child: FlatButton(
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Spregunta()),
+                          MaterialPageRoute(builder: (context) => Todo()),
                         );
                       },
                       child: new Icon(

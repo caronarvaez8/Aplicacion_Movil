@@ -35,7 +35,7 @@ class _RegistroState extends State<Registro> {
       Toast.show("Creaste la cuenta", context,
           duration: Toast.LENGTH_LONG,
           gravity: Toast.CENTER,
-          backgroundColor: Color.fromRGBO(131, 78, 198, .9),
+          backgroundColor: Color(0xFF8E7525),
           textColor: Colors.white);
 
       Navigator.push(
@@ -46,7 +46,7 @@ class _RegistroState extends State<Registro> {
       Toast.show("${dataUser['problem']}", context,
           duration: Toast.LENGTH_LONG,
           gravity: Toast.CENTER,
-          backgroundColor: Color.fromRGBO(131, 78, 198, .9),
+          backgroundColor: Color(0xFF8E7525),
           textColor: Colors.white);
     }
   }
@@ -72,8 +72,8 @@ class _RegistroState extends State<Registro> {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        Color.fromRGBO(131, 78, 198, .6),
-                        Color.fromRGBO(131, 78, 198, .9),
+                        Color.fromRGBO(119, 96, 22, .6),
+                        Color.fromRGBO(119, 96, 22, .8),
                       ],
                       begin: Alignment.topLeft,
                       end: Alignment.topRight,
@@ -247,8 +247,8 @@ class _RegistroState extends State<Registro> {
                           decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
-                                  Color.fromRGBO(131, 78, 198, .6),
-                                  Color.fromRGBO(131, 78, 198, .9),
+                                  Color.fromRGBO(243, 197, 127, .6),
+                                  Color.fromRGBO(243, 197, 127, .8),
                                 ],
                                 begin: Alignment.centerLeft,
                                 end: Alignment.centerRight,

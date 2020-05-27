@@ -3,6 +3,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:Mascotas/expli.dart';
 import 'package:Mascotas/inicio.dart';
 import 'package:Mascotas/animales.dart';
+import 'package:Mascotas/Perfil.dart';
 
 void main() => runApp(MaterialApp(home: BottomNavBar()));
 
@@ -19,6 +20,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final Inicio _inicio = Inicio();
   final Expli _expli = Expli();
   final Animales _animales = Animales();
+  final Perfil _perfil = Perfil();
 
   Widget _showPage = new Inicio();
   Widget todos(int index) {
@@ -29,6 +31,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
         return _expli;
       case 2:
         return _animales;
+      case 3:
+        return  _perfil;
+
 
         break;
       default:
@@ -41,13 +46,13 @@ class _BottomNavBarState extends State<BottomNavBar> {
         bottomNavigationBar: CurvedNavigationBar(
           // initialIndex : 0,
           items: <Widget>[
-            Icon(Icons.home, size: 30, color: Color(0xFFF2CA4E)),
-            Icon(Icons.pets, size: 30, color: Color(0xFFF2CA4E)),
-            Icon(Icons.search, size: 30, color: Color(0xFFF2CA4E)),
-            Icon(Icons.perm_identity, size: 30, color: Color(0xFFF2CA4E)),
+            Icon(Icons.home, size: 30, color: Color(0xFFF3C57F)),
+            Icon(Icons.pets, size: 30, color: Color(0xFFF3C57F)),
+            Icon(Icons.search, size: 30, color: Color(0xFFF3C57F)),
+            Icon(Icons.perm_identity, size: 30, color: Color(0xFFF3C57F)),
           ],
           color: Colors.white,
-          buttonBackgroundColor: Color(0xFFA775E7),
+          buttonBackgroundColor: Color(0xFF776016),
           backgroundColor: Colors.white,
           animationCurve: Curves.easeInOut,
           animationDuration: Duration(milliseconds: 600),

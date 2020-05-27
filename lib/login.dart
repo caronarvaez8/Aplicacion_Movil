@@ -38,7 +38,7 @@ class _LoginState extends State<Login> {
       Toast.show("Login incorrecto", context,
           duration: Toast.LENGTH_LONG,
           gravity: Toast.CENTER,
-          backgroundColor: Color.fromRGBO(131, 78, 198, .9),
+          backgroundColor: Color(0xFF8E7525),
           textColor: Colors.white);
     }
   }
@@ -60,8 +60,8 @@ class _LoginState extends State<Login> {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      Color.fromRGBO(131, 78, 198, .6),
-                      Color.fromRGBO(131, 78, 198, .9),
+                      Color.fromRGBO(119, 96, 22, .6),
+                      Color.fromRGBO(119, 96, 22, .8),
                     ],
                     begin: Alignment.topLeft,
                     end: Alignment.topRight,
@@ -77,6 +77,7 @@ class _LoginState extends State<Login> {
                           height: 300,
                         ),
                         Container(
+                          alignment: Alignment.topRight,
                           child: Text(
                             "AdopDOG",
                             style: TextStyle(
@@ -86,7 +87,6 @@ class _LoginState extends State<Login> {
                               fontWeight: FontWeight.w900,
                             ),
                           ),
-                          alignment: Alignment.topRight,
                         )
                       ],
                     ),
@@ -160,8 +160,8 @@ class _LoginState extends State<Login> {
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            Color.fromRGBO(131, 78, 198, .6),
-                            Color.fromRGBO(131, 78, 198, .9),
+                            Color.fromRGBO(243, 197, 127, .6),
+                            Color.fromRGBO(243, 197, 127, .8),
                           ],
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
@@ -198,7 +198,8 @@ class _LoginState extends State<Login> {
                       child: Text(
                         "Si no tienes una cuenta puedes crearla aquí:",
                         style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 16,
+                            fontFamily: "cormorant",
                             color: Color.fromRGBO(48, 48, 48, .7)),
                       )),
                   Container(
@@ -215,7 +216,7 @@ class _LoginState extends State<Login> {
                                 fontSize: 20,
                                 fontFamily: "flower",
                                 fontWeight: FontWeight.w900,
-                                color: Color(0xFFF5BA42))),
+                                color: Color(0xFF206616))),
                       ))
                 ],
               ),

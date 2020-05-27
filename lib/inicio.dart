@@ -45,7 +45,8 @@ class _InicioState extends State<Inicio> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                        width: widthApp * 0.5,
+                        alignment: Alignment.center,
+                        width: widthApp * 0.8,
                         margin: EdgeInsets.only(top: (heightApp * 0.06)),
                         child: Text(
                           "Adopta no compra",
@@ -53,7 +54,7 @@ class _InicioState extends State<Inicio> {
                               fontSize: 35,
                               fontWeight: FontWeight.w900,
                               fontFamily: "flower",
-                              color: Color(0xFF840D99)),
+                              color: Color(0xFF5C7E1F)),
                         )),
                     Container(
                         alignment: Alignment.center,
@@ -63,6 +64,7 @@ class _InicioState extends State<Inicio> {
                           "Encuentra el próximo integrante de la familia entre diferentes mascotas disposibles para adoptar en tu ciudad",
                           style: TextStyle(
                               fontSize: 20,
+                              fontFamily: "cormorant",
                               color: Color.fromRGBO(48, 48, 48, .8)),
                         ))
                   ],

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:Mascotas/colores.dart';
 
-class Expli extends StatefulWidget {
+class Perfil extends StatefulWidget {
   @override
-  _ExpliState createState() => _ExpliState();
+  _PerfilState createState() => _PerfilState();
 }
 
-class _ExpliState extends State<Expli> {
+class _PerfilState extends State<Perfil> {
   @override
   Widget build(BuildContext context) {
     double widthApp = MediaQuery.of(context).size.width;
@@ -14,7 +14,7 @@ class _ExpliState extends State<Expli> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "¿Por qué adoptar?",
+            "Perfil",
             style: TextStyle(
                 color: Colors.white,
                 fontFamily: "flower",
@@ -45,25 +45,23 @@ class _ExpliState extends State<Expli> {
                       children: <Widget>[
                         Container(
                             width: widthApp * 0.8,
-                            alignment: Alignment.center,
                             margin: EdgeInsets.only(top: (heightApp * 0.06)),
                             child: Text(
-                              "¿Por qué estas salvando una vida?",
+                              "Hola",
                               style: TextStyle(
                                   fontSize: 35,
                                   fontWeight: FontWeight.w900,
                                   fontFamily: "flower",
-                                  color: Color(0xFF5C7E1F)),
+                                  color: Color(0xFF840D99)),
                             )),
                         Container(
                             alignment: Alignment.center,
                             width: widthApp * 0.8,
                             margin: EdgeInsets.only(top: (heightApp * 0.03)),
                             child: Text(
-                              "Cada  año, millones  de  animales  nacen en las calles o terminan  siendo  abandonados.  Los refugios  de  animales  y  las organizaciones de cuidado no satisfacen la demanda. Si más  personas adoptan en lugar de  comprar, ese número rebajar considerablemente.  Unanimal adoptado en  un refugio  deja  el espacio  para  que otro sea rescatado. \n",
+                              "",
                               style: TextStyle(
                                   fontSize: 20,
-                                  fontFamily: "cormorant",
                                   color: Color.fromRGBO(48, 48, 48, .8)),
                             ))
                       ],

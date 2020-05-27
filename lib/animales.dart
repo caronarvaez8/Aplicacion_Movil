@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Mascotas/todo.dart';
+import 'package:Mascotas/Ppregunta.dart';
 
 class Animales extends StatefulWidget {
   @override
@@ -43,12 +43,14 @@ class _AnimalesState extends State<Animales> {
                     child: Column(
                       children: <Widget>[
                         Container(
-                            width: widthApp * 0.88,
+                            width: widthApp * 0.8,
+                            alignment: Alignment.center,
                             margin: EdgeInsets.only(top: (heightApp * 0.06)),
                             child: Text(
                               "Elige tu mejor compañia, para que te diviertas jugando",
                               style: TextStyle(
                                   fontSize: 20,
+                                  fontFamily: "cormorant",
                                   color: Color.fromRGBO(48, 48, 48, .8)),
                             )),
                         Container(
@@ -58,7 +60,8 @@ class _AnimalesState extends State<Animales> {
                             onPressed: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => Todo()),
+                                MaterialPageRoute(
+                                    builder: (context) => Ppregunta()),
                               );
                             },
                             shape: RoundedRectangleBorder(
@@ -68,8 +71,8 @@ class _AnimalesState extends State<Animales> {
                               decoration: BoxDecoration(
                                   gradient: LinearGradient(
                                     colors: [
-                                      Color.fromRGBO(131, 78, 198, .6),
-                                      Color.fromRGBO(131, 78, 198, .9),
+                                      Color.fromRGBO(243, 197, 127, .6),
+                                      Color.fromRGBO(243, 197, 127, .8),
                                     ],
                                     begin: Alignment.centerLeft,
                                     end: Alignment.centerRight,
@@ -77,7 +80,7 @@ class _AnimalesState extends State<Animales> {
                                   borderRadius: BorderRadius.circular(30.0)),
                               child: Container(
                                 constraints: BoxConstraints(
-                                    maxWidth: 200.0, minHeight: 50.0),
+                                    maxWidth: 200.0, minHeight: 70.0),
                                 alignment: Alignment.center,
                                 child: Text(
                                   "Comenzar",
