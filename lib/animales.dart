@@ -14,10 +14,10 @@ class _AnimalesState extends State<Animales> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "Adopcion de Perros",
+            "Adopción de Perros",
             style: TextStyle(
                 color: Color.fromRGBO(255, 255, 255, .9),
-                fontFamily: "flower",
+                fontFamily: "cormorant",
                 fontSize: 30,
                 fontWeight: FontWeight.w800),
           ),
@@ -48,7 +48,7 @@ class _AnimalesState extends State<Animales> {
                               "Elige tu mejor compañia, para que te diviertas jugando",
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 21,
                                 fontFamily: "cormorant",
                               ),
                             )),
@@ -85,10 +85,10 @@ class _AnimalesState extends State<Animales> {
                                   "Comenzar",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      fontSize: 30,
+                                      fontSize: 25,
                                       color: Colors.white,
                                       fontWeight: FontWeight.w800,
-                                      fontFamily: "flower"),
+                                      fontFamily: "cormorant"),
                                 ),
                               ),
                             ),

@@ -17,7 +17,7 @@ class _ExpliState extends State<Expli> {
             "¿Por qué adoptar?",
             style: TextStyle(
                 color: Colors.white,
-                fontFamily: "flower",
+                fontFamily: "cormorant",
                 fontSize: 30,
                 fontWeight: FontWeight.w800),
           ),
@@ -33,7 +33,7 @@ class _ExpliState extends State<Expli> {
                     alignment: Alignment.center,
                     child: Image.asset("imagenes/pe.png"),
                     height: 200,
-                    margin: EdgeInsets.only(top: (heightApp * .05)),
+                    margin: EdgeInsets.only(top: (heightApp * .01)),
                   )),
                 ],
               ),
@@ -49,19 +49,19 @@ class _ExpliState extends State<Expli> {
                               "¿Por qué estas salvando una vida?",
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  fontSize: 35,
+                                  fontSize: 32,
                                   fontWeight: FontWeight.w900,
-                                  fontFamily: "flower",
+                                  fontFamily: "cormorant",
                                   color: Color(0xFF5C7E1F)),
                             )),
                         Container(
                             alignment: Alignment.center,
                             width: widthApp * 0.8,
-                            margin: EdgeInsets.only(top: (heightApp * 0.03)),
+                            margin: EdgeInsets.only(top: (heightApp * 0.02)),
                             child: Text(
                               "Cada  año, millones  de  animales  nacen en las calles o terminan  siendo  abandonados.  Los refugios  de  animales  y  las organizaciones de cuidado no satisfacen la demanda. Si más  personas adoptan en lugar de  comprar, ese número rebajar considerablemente.  Unanimal adoptado en  un refugio  deja  el espacio  para  que otro sea rescatado. \n",
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 21,
                                 fontFamily: "cormorant",
                               ),
                             ))

@@ -59,8 +59,11 @@ flutter:
    - imagenes/in.png
    - imagenes/per.png
    - imagenes/perro.png
-   - imagenes/pp.png
    - imagenes/se.png
+   - imagenes/pp.png
+   - imagenes/cui.png
+   - imagenes/gif.gif
+
    
   #  - images/a_dot_ham.jpeg
 
@@ -90,7 +93,7 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
   fonts:
-    - family: flower
+    - family: cormorant_Bold
       fonts:
         - asset: font/Cormorant-Bold.ttf
     - family: cormorant

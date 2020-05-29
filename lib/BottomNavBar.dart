@@ -45,9 +45,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
           // initialIndex : 0,
           items: <Widget>[
             Icon(Icons.home, size: 30, color: Color(0xFFF3C57F)),
-            Icon(Icons.pets, size: 30, color: Color(0xFFF3C57F)),
+            Icon(Icons.live_help, size: 30, color: Color(0xFFF3C57F)),
             Icon(Icons.search, size: 30, color: Color(0xFFF3C57F)),
-            Icon(Icons.perm_identity, size: 30, color: Color(0xFFF3C57F)),
+            Icon(Icons.pets, size: 30, color: Color(0xFFF3C57F)),
           ],
           color: Colors.white,
           buttonBackgroundColor: Color(0xFF776016),

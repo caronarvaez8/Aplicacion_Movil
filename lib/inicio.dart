@@ -24,8 +24,8 @@ class _InicioState extends State<Inicio> {
           "Inicio",
           style: TextStyle(
               color: Colors.white,
-              fontFamily: "flower",
-              fontSize: 35,
+              fontFamily: "cormorant",
+              fontSize: 30,
               fontWeight: FontWeight.w900),
         ),
       ),
@@ -54,9 +54,9 @@ class _InicioState extends State<Inicio> {
                         child: Text(
                           "Adopta no compra",
                           style: TextStyle(
-                              fontSize: 35,
+                              fontSize: 32,
                               fontWeight: FontWeight.w900,
-                              fontFamily: "flower",
+                              fontFamily: "cormorant",
                               color: Color(0xFF5C7E1F)),
                         )),
                     Container(
@@ -66,7 +66,7 @@ class _InicioState extends State<Inicio> {
                         child: Text(
                           "Encuentra el próximo integrante de la familia entre diferentes mascotas disposibles para adoptar en tu ciudad",
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 21,
                             fontFamily: "cormorant",
                           ),
                         ))

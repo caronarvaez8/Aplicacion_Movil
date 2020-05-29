@@ -262,8 +262,8 @@ class _RegistroState extends State<Registro> {
                               "Crear cuenta",
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  fontFamily: "flower",
-                                  fontSize: 20,
+                                  fontFamily: "cormorant",
+                                  fontSize: 25,
                                   fontWeight: FontWeight.w800,
                                   color: Colors.white),
                             ),

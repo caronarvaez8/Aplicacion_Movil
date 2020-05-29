@@ -60,7 +60,7 @@ class _PpreguntaoState extends State<Ppregunta> {
             "Raza",
             style: TextStyle(
                 color: Color.fromRGBO(255, 255, 255, .9),
-                fontFamily: "flower",
+                fontFamily: "cormorant",
                 fontSize: 30,
                 fontWeight: FontWeight.w800),
           ),
@@ -84,10 +84,10 @@ class _PpreguntaoState extends State<Ppregunta> {
                   Expanded(
                     child: Container(
                       margin: EdgeInsets.only(top: (heightApp * 0.06)),
-                      child: Text('¿Qué raza de carro desea?',
+                      child: Text('¿Qué raza de perro quieres?',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontSize: 27,
+                              fontSize: 32,
                               fontFamily: "flower",
                               fontWeight: FontWeight.w900,
                               color: Color(0xFF5C7E1F))),
@@ -109,7 +109,7 @@ class _PpreguntaoState extends State<Ppregunta> {
                             iconEnabledColor: Color(0xFF776016),
                             style: new TextStyle(
                                 color: Color(0xFF776016),
-                                fontSize: 20,
+                                fontSize: 21,
                                 fontFamily: "cormorant"),
                             value: use,
                             items: marcas1.map((String e) {

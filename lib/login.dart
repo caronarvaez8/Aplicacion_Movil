@@ -74,7 +74,7 @@ class _LoginState extends State<Login> {
                           child: Text(
                             "AdopDOG",
                             style: TextStyle(
-                              fontFamily: "flower",
+                              fontFamily: "cormorant",
                               color: Color.fromRGBO(255, 255, 255, .9),
                               fontSize: 35,
                               fontWeight: FontWeight.w900,
@@ -168,7 +168,7 @@ class _LoginState extends State<Login> {
                         "Iniciar sesión",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontFamily: "flower",
+                            fontFamily: "cormorant",
                             fontWeight: FontWeight.w900,
                             fontSize: 25,
                             color: Colors.white),
@@ -191,7 +191,7 @@ class _LoginState extends State<Login> {
                       child: Text(
                         "Si no tienes una cuenta puedes crearla aquí:",
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 17,
                           fontFamily: "cormorant",
                         ),
                       )),
@@ -207,7 +207,7 @@ class _LoginState extends State<Login> {
                         child: const Text('Registrarse',
                             style: TextStyle(
                                 fontSize: 20,
-                                fontFamily: "flower",
+                                fontFamily: "cormorant",
                                 fontWeight: FontWeight.w900,
                                 color: Color(0xFF206616))),
                       ))

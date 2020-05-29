@@ -8,17 +8,18 @@ import 'package:Mascotas/todo.dart';
 
 class Spregunta extends StatefulWidget {
   @override
-  final String pregunta;
-  Spregunta({Key key, @required this.pregunta}) : super(key: key);
+  final String pregunta, pregunta1;
+  Spregunta({Key key, @required this.pregunta, this.pregunta1})
+      : super(key: key);
 
-  _SpreguntaoState createState() => _SpreguntaoState(pregunta);
+  _SpreguntaoState createState() => _SpreguntaoState(pregunta, pregunta1);
 }
 
 class _SpreguntaoState extends State<Spregunta> {
   @override
-  final pregunta;
-  _SpreguntaoState(this.pregunta);
-  String use = "Selecione el tamaño";
+  final pregunta, pregunta1;
+  _SpreguntaoState(this.pregunta, this.pregunta1);
+  String use1 = "Selecione el tamaño";
 
   /// MARCAS
   Future<List> marcas() async {
@@ -61,7 +62,7 @@ class _SpreguntaoState extends State<Spregunta> {
             "Tamaño",
             style: TextStyle(
                 color: Color.fromRGBO(255, 255, 255, .9),
-                fontFamily: "flower",
+                fontFamily: "cormorant",
                 fontSize: 30,
                 fontWeight: FontWeight.w800),
           ),
@@ -85,12 +86,11 @@ class _SpreguntaoState extends State<Spregunta> {
                   Expanded(
                     child: Container(
                       margin: EdgeInsets.only(top: (heightApp * 0.07)),
-                      child: Text(
-                          '¿De que tamaño desea el perro?${pregunta.toString()}',
+                      child: Text('¿De que tamaño quieres el perro?',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontSize: 25,
-                              fontFamily: "flower",
+                              fontSize: 32,
+                              fontFamily: "cormorant",
                               fontWeight: FontWeight.w900,
                               color: Color(0xFF5C7E1F))),
                     ),
@@ -108,11 +108,11 @@ class _SpreguntaoState extends State<Spregunta> {
                           margin: EdgeInsets.only(top: (heightApp * 0.09)),
                           child: DropdownButton<String>(
                             isExpanded: true,
-                            value: use,
+                            value: use1,
                             iconEnabledColor: Color(0xFF776016),
                             style: new TextStyle(
                                 color: Color(0xFF776016),
-                                fontSize: 20,
+                                fontSize: 21,
                                 fontFamily: "cormorant"),
                             items: marcas1.map((String e) {
                               return DropdownMenuItem<String>(
@@ -122,7 +122,7 @@ class _SpreguntaoState extends State<Spregunta> {
                             }).toList(),
                             onChanged: (mostrar) {
                               setState(() {
-                                use = mostrar;
+                                use1 = mostrar;
                               });
                             },
                           ),
@@ -142,7 +142,9 @@ class _SpreguntaoState extends State<Spregunta> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Todo()),
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  Todo(pregunta: pregunta, pregunta1: use1)),
                         );
                       },
                       child: new Icon(
