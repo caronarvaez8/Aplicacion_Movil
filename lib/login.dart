@@ -23,13 +23,6 @@ class _LoginState extends State<Login> {
 
     var dataUser = json.decode(reponde.body);
     if (dataUser["status"]) {
-      /*
-      Toast.show("LOGIN CORRECTO", context,
-          duration: Toast.LENGTH_LONG,
-          gravity: Toast.CENTER,
-          backgroundColor: Colors.blue,
-          textColor: Colors.white);
-          */
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => BottomNavBar()),
@@ -198,9 +191,9 @@ class _LoginState extends State<Login> {
                       child: Text(
                         "Si no tienes una cuenta puedes crearla aquí:",
                         style: TextStyle(
-                            fontSize: 16,
-                            fontFamily: "cormorant",
-                            color: Color.fromRGBO(48, 48, 48, .7)),
+                          fontSize: 16,
+                          fontFamily: "cormorant",
+                        ),
                       )),
                   Container(
                       margin: EdgeInsets.only(top: (heightApp * 0.02)),

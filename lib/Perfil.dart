@@ -44,10 +44,10 @@ class _PerfilState extends State<Perfil> {
                     child: Column(
                       children: <Widget>[
                         Container(
-                            width: widthApp * 0.8,
                             margin: EdgeInsets.only(top: (heightApp * 0.06)),
                             child: Text(
                               "Hola",
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 35,
                                   fontWeight: FontWeight.w900,
@@ -55,11 +55,10 @@ class _PerfilState extends State<Perfil> {
                                   color: Color(0xFF840D99)),
                             )),
                         Container(
-                            alignment: Alignment.center,
-                            width: widthApp * 0.8,
                             margin: EdgeInsets.only(top: (heightApp * 0.03)),
                             child: Text(
                               "",
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 20,
                                   color: Color.fromRGBO(48, 48, 48, .8)),

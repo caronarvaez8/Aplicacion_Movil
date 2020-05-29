@@ -14,7 +14,6 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   int _page = 0;
-  //GlobalKey _bottomNavigationKey = GlobalKey();
 
   int pageIndex = 0;
   final Inicio _inicio = Inicio();
@@ -32,8 +31,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       case 2:
         return _animales;
       case 3:
-        return  _perfil;
-
+        return _perfil;
 
         break;
       default:

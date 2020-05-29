@@ -31,8 +31,8 @@ class _ExpliState extends State<Expli> {
                       child: Container(
                     width: widthApp * 0.9,
                     alignment: Alignment.center,
-                    child: Image.asset("imagenes/porque.jpg"),
-                    height: 180,
+                    child: Image.asset("imagenes/pe.png"),
+                    height: 200,
                     margin: EdgeInsets.only(top: (heightApp * .05)),
                   )),
                 ],
@@ -44,11 +44,10 @@ class _ExpliState extends State<Expli> {
                     child: Column(
                       children: <Widget>[
                         Container(
-                            width: widthApp * 0.8,
-                            alignment: Alignment.center,
-                            margin: EdgeInsets.only(top: (heightApp * 0.06)),
+                            margin: EdgeInsets.only(top: (heightApp * 0.04)),
                             child: Text(
                               "¿Por qué estas salvando una vida?",
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 35,
                                   fontWeight: FontWeight.w900,
@@ -62,9 +61,9 @@ class _ExpliState extends State<Expli> {
                             child: Text(
                               "Cada  año, millones  de  animales  nacen en las calles o terminan  siendo  abandonados.  Los refugios  de  animales  y  las organizaciones de cuidado no satisfacen la demanda. Si más  personas adoptan en lugar de  comprar, ese número rebajar considerablemente.  Unanimal adoptado en  un refugio  deja  el espacio  para  que otro sea rescatado. \n",
                               style: TextStyle(
-                                  fontSize: 20,
-                                  fontFamily: "cormorant",
-                                  color: Color.fromRGBO(48, 48, 48, .8)),
+                                fontSize: 20,
+                                fontFamily: "cormorant",
+                              ),
                             ))
                       ],
                     ),

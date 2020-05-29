@@ -30,9 +30,9 @@ class _AnimalesState extends State<Animales> {
                   Expanded(
                       child: Container(
                     alignment: Alignment.center,
-                    child: Image.asset("imagenes/criollo.jpg"),
-                    height: 200,
-                    margin: EdgeInsets.only(top: (heightApp * .05)),
+                    child: Image.asset("imagenes/se.png"),
+                    height: 160,
+                    margin: EdgeInsets.only(top: (heightApp * .07)),
                   )),
                 ],
               ),
@@ -43,19 +43,18 @@ class _AnimalesState extends State<Animales> {
                     child: Column(
                       children: <Widget>[
                         Container(
-                            width: widthApp * 0.8,
-                            alignment: Alignment.center,
-                            margin: EdgeInsets.only(top: (heightApp * 0.06)),
+                            margin: EdgeInsets.only(top: (heightApp * 0.07)),
                             child: Text(
                               "Elige tu mejor compañia, para que te diviertas jugando",
+                              textAlign: TextAlign.center,
                               style: TextStyle(
-                                  fontSize: 20,
-                                  fontFamily: "cormorant",
-                                  color: Color.fromRGBO(48, 48, 48, .8)),
+                                fontSize: 20,
+                                fontFamily: "cormorant",
+                              ),
                             )),
                         Container(
                           height: 50.0,
-                          margin: EdgeInsets.only(top: (heightApp * 0.07)),
+                          margin: EdgeInsets.only(top: (heightApp * 0.13)),
                           child: RaisedButton(
                             onPressed: () {
                               Navigator.push(

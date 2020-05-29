@@ -8,11 +8,16 @@ import 'package:Mascotas/Spregunta.dart';
 
 class Ppregunta extends StatefulWidget {
   @override
-  _PpreguntaoState createState() => _PpreguntaoState();
+  final pregunta;
+
+  const Ppregunta({Key key, this.pregunta}) : super(key: key);
+  _PpreguntaoState createState() => new _PpreguntaoState(pregunta);
 }
 
 class _PpreguntaoState extends State<Ppregunta> {
   @override
+  final pregunta;
+  _PpreguntaoState(this.pregunta);
   String use = "Selecione la raza";
 
   /// MARCAS
@@ -68,7 +73,7 @@ class _PpreguntaoState extends State<Ppregunta> {
                   Expanded(
                       child: Container(
                     alignment: Alignment.center,
-                    child: Image.asset("imagenes/chi.jpg"),
+                    child: Image.asset("imagenes/per.png"),
                     height: 180,
                     margin: EdgeInsets.only(top: (heightApp * .05)),
                   )),
@@ -77,23 +82,17 @@ class _PpreguntaoState extends State<Ppregunta> {
               Row(
                 children: <Widget>[
                   Expanded(
-                      child: Container(
-                    width: widthApp * 0.8,
-                    child: Column(
-                      children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.only(top: (heightApp * 0.06)),
-                          alignment: Alignment.center,
-                          child: const Text('¿Qué raza de carro desea?',
-                              style: TextStyle(
-                                  fontSize: 27,
-                                  fontFamily: "flower",
-                                  fontWeight: FontWeight.w900,
-                                  color: Color(0xFF5C7E1F))),
-                        ),
-                      ],
+                    child: Container(
+                      margin: EdgeInsets.only(top: (heightApp * 0.06)),
+                      child: Text('¿Qué raza de carro desea?',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 27,
+                              fontFamily: "flower",
+                              fontWeight: FontWeight.w900,
+                              color: Color(0xFF5C7E1F))),
                     ),
-                  )),
+                  ),
                 ],
               ),
               Row(
@@ -141,7 +140,8 @@ class _PpreguntaoState extends State<Ppregunta> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Spregunta()),
+                          MaterialPageRoute(
+                              builder: (context) => Spregunta(pregunta: use)),
                         );
                       },
                       child: new Icon(

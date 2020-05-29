@@ -8,11 +8,16 @@ import 'package:Mascotas/todo.dart';
 
 class Spregunta extends StatefulWidget {
   @override
-  _SpreguntaoState createState() => _SpreguntaoState();
+  final String pregunta;
+  Spregunta({Key key, @required this.pregunta}) : super(key: key);
+
+  _SpreguntaoState createState() => _SpreguntaoState(pregunta);
 }
 
 class _SpreguntaoState extends State<Spregunta> {
   @override
+  final pregunta;
+  _SpreguntaoState(this.pregunta);
   String use = "Selecione el tamaño";
 
   /// MARCAS
@@ -44,6 +49,7 @@ class _SpreguntaoState extends State<Spregunta> {
         });
       });
     });
+    print(pregunta);
   }
 
   Widget build(BuildContext context) {
@@ -68,7 +74,7 @@ class _SpreguntaoState extends State<Spregunta> {
                   Expanded(
                       child: Container(
                     alignment: Alignment.center,
-                    child: Image.asset("imagenes/criollo.jpg"),
+                    child: Image.asset("imagenes/expli.png"),
                     height: 180,
                     margin: EdgeInsets.only(top: (heightApp * .05)),
                   )),
@@ -77,23 +83,18 @@ class _SpreguntaoState extends State<Spregunta> {
               Row(
                 children: <Widget>[
                   Expanded(
-                      child: Container(
-                    width: widthApp * 0.8,
-                    child: Column(
-                      children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.only(top: (heightApp * 0.1)),
-                          alignment: Alignment.center,
-                          child: const Text('¿De que tamaño desea el perro?',
-                              style: TextStyle(
-                                  fontSize: 25,
-                                  fontFamily: "flower",
-                                  fontWeight: FontWeight.w900,
-                                  color: Color(0xFF5C7E1F))),
-                        ),
-                      ],
+                    child: Container(
+                      margin: EdgeInsets.only(top: (heightApp * 0.07)),
+                      child: Text(
+                          '¿De que tamaño desea el perro?${pregunta.toString()}',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 25,
+                              fontFamily: "flower",
+                              fontWeight: FontWeight.w900,
+                              color: Color(0xFF5C7E1F))),
                     ),
-                  )),
+                  ),
                 ],
               ),
               Row(
@@ -104,7 +105,7 @@ class _SpreguntaoState extends State<Spregunta> {
                       children: <Widget>[
                         Container(
                           width: widthApp * 0.8,
-                          margin: EdgeInsets.only(top: (heightApp * 0.06)),
+                          margin: EdgeInsets.only(top: (heightApp * 0.09)),
                           child: DropdownButton<String>(
                             isExpanded: true,
                             value: use,

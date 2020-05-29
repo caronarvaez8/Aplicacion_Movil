@@ -3,10 +3,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class Inicio extends StatefulWidget {
   @override
-  _InicioState createState() => _InicioState();
+  final pregunta;
+
+  const Inicio({Key key, this.pregunta}) : super(key: key);
+  _InicioState createState() => _InicioState(pregunta);
 }
 
 class _InicioState extends State<Inicio> {
+  final pregunta;
+  _InicioState(this.pregunta);
   SharedPreferences sharedPreferences;
   @override
   Widget build(BuildContext context) {
@@ -32,7 +37,7 @@ class _InicioState extends State<Inicio> {
               Expanded(
                   child: Container(
                 alignment: Alignment.center,
-                child: Image.asset("imagenes/chi.jpg"),
+                child: Image.asset("imagenes/in.png"),
                 height: 180,
                 margin: EdgeInsets.only(top: (heightApp * 0.05)),
               )),
@@ -45,8 +50,6 @@ class _InicioState extends State<Inicio> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                        alignment: Alignment.center,
-                        width: widthApp * 0.8,
                         margin: EdgeInsets.only(top: (heightApp * 0.06)),
                         child: Text(
                           "Adopta no compra",
@@ -63,9 +66,9 @@ class _InicioState extends State<Inicio> {
                         child: Text(
                           "Encuentra el próximo integrante de la familia entre diferentes mascotas disposibles para adoptar en tu ciudad",
                           style: TextStyle(
-                              fontSize: 20,
-                              fontFamily: "cormorant",
-                              color: Color.fromRGBO(48, 48, 48, .8)),
+                            fontSize: 20,
+                            fontFamily: "cormorant",
+                          ),
                         ))
                   ],
                 ),
